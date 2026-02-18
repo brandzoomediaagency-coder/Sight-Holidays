@@ -179,20 +179,125 @@
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 15px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
-        .nav-links a {
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links li a {
             font-weight: 500;
-            font-size: 15px;
+            font-size: 14px;
             color: var(--black);
+            padding: 10px 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .nav-links a:hover {
+        .nav-links li a i {
+            font-size: 12px;
+            color: var(--text-gray);
+            transition: var(--transition);
+        }
+
+        .nav-links li:hover>a {
             color: var(--yellow);
         }
 
-        /* Mobile Menu Drawer */
+        .nav-links li:hover>a i {
+            transform: rotate(180deg);
+            color: var(--yellow);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: var(--shadow-lg);
+            border-radius: 8px;
+            padding: 15px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: var(--transition);
+            z-index: 1001;
+            border-top: 3px solid var(--yellow);
+        }
+
+        .nav-links li:hover>.dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown li {
+            width: 100%;
+        }
+
+        .dropdown li a {
+            padding: 10px 25px;
+            font-size: 14px;
+            color: var(--black);
+            width: 100%;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown li a:hover {
+            background: var(--light-gray);
+            color: var(--yellow);
+            padding-left: 30px;
+        }
+
+        /* Mobile Drawer Submenu */
+        .mobile-nav {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .mobile-nav>li {
+            border-bottom: 1px solid #eee;
+        }
+
+        .mobile-nav>li>a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .mobile-submenu {
+            display: none;
+            padding-left: 20px;
+            list-style: none;
+            background: #fdfdfd;
+        }
+
+        .mobile-submenu li a {
+            display: block;
+            padding: 10px 0;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .has-submenu.active .mobile-submenu {
+            display: block;
+        }
+
+        .has-submenu.active>a i {
+            transform: rotate(180deg);
+        }
+
         .header-actions {
             display: none;
             gap: 15px;
@@ -563,7 +668,7 @@
         }
 
         .btn-details {
-            background-color: #E94B6D;
+            background-color: var(--black);
             color: white;
             border: none;
             padding: 10px;
@@ -571,6 +676,17 @@
             font-weight: 600;
             cursor: pointer;
             font-size: 14px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .btn-details:hover {
+            background-color: var(--yellow) !important;
+            color: var(--black) !important;
+            transform: translateY(-2px);
         }
 
         /* Swiper Custom Style */
@@ -1192,11 +1308,50 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#packages">India Tour</a></li>
-                <li><a href="#international">International</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="#">India Tour <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="jaipur-tour.html">Rajasthan</a></li>
+                        <li><a href="northeast.html">North East</a></li>
+                        <li><a href="darjeeling-tour.html">Darjeeling</a></li>
+                        <li><a href="#">Kerala</a></li>
+                        <li><a href="#">J&K</a></li>
+                        <li><a href="#">Uttarakhand</a></li>
+                        <li><a href="#">Himachal</a></li>
+                        <li><a href="#">Ladakh</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Theme Holidays <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="#">Honeymoon Specials</a></li>
+                        <li><a href="#">Family Holidays</a></li>
+                        <li><a href="#">Adventure Tours</a></li>
+                        <li><a href="#">Luxury Getaways</a></li>
+                        <li><a href="#">Wildlife Safaris</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Sight Special</a></li>
+                <li>
+                    <a href="#">Weekend Getaways <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="#">Shimla & Manali</a></li>
+                        <li><a href="#">Rishikesh & Mussoorie</a></li>
+                        <li><a href="jaipur-tour.html">Jaipur</a></li>
+                        <li><a href="mathura-tour.html">Mathura & Agra</a></li>
+                        <li><a href="#">Nainital & Jim Corbett</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="#">Hotel Booking</a></li>
+                        <li><a href="#">Car Rental</a></li>
+                        <li><a href="#">Flight Booking</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Blogs</a></li>
             </ul>
             <div class="header-actions">
                 <div class="menu-toggle" onclick="toggleMenu()">
@@ -1218,13 +1373,44 @@
         <div class="logo-area" style="padding: 20px 0;">
             <span class="logo-text">SIGHT <span>HOLIDAYS</span></span>
         </div>
-        <div class="drawer-links">
-            <a href="#" onclick="toggleMenu()">Home</a>
-            <a href="#packages" onclick="toggleMenu()">India Tour</a>
-            <a href="#international" onclick="toggleMenu()">International</a>
-            <a href="#about" onclick="toggleMenu()">About Us</a>
-            <a href="#contact" onclick="toggleMenu()">Contact</a>
-        </div>
+        <ul class="mobile-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="has-submenu">
+                <a href="javascript:void(0)" onclick="this.parentElement.classList.toggle('active')">India Tour <i
+                        class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="jaipur-tour.html" onclick="toggleMenu()">Rajasthan</a></li>
+                    <li><a href="northeast.html" onclick="toggleMenu()">North East</a></li>
+                    <li><a href="darjeeling-tour.html" onclick="toggleMenu()">Darjeeling</a></li>
+                    <li><a href="#" onclick="toggleMenu()">Kerala</a></li>
+                    <li><a href="#" onclick="toggleMenu()">J&K</a></li>
+                    <li><a href="#" onclick="toggleMenu()">Uttarakhand</a></li>
+                    <li><a href="#" onclick="toggleMenu()">Himachal</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="javascript:void(0)" onclick="this.parentElement.classList.toggle('active')">Theme Holidays <i
+                        class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="#" onclick="toggleMenu()">Honeymoon Specials</a></li>
+                    <li><a href="#" onclick="toggleMenu()">Family Holidays</a></li>
+                    <li><a href="#" onclick="toggleMenu()">Adventure Tours</a></li>
+                    <li><a href="#" onclick="toggleMenu()">Luxury Getaways</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Sight Special</a></li>
+            <li class="has-submenu">
+                <a href="javascript:void(0)" onclick="this.parentElement.classList.toggle('active')">Weekend Getaways <i
+                        class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="jaipur-tour.html" onclick="toggleMenu()">Jaipur</a></li>
+                    <li><a href="mathura-tour.html" onclick="toggleMenu()">Mathura & Agra</a></li>
+                    <li><a href="#" onclick="toggleMenu()">Rishikesh</a></li>
+                    <li><a href="#" onclick="toggleMenu()">Jim Corbett</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Blogs</a></li>
+        </ul>
         <div style="margin-top: 20px;">
             <a href="javascript:void(0)" onclick="openModal('Plan My Trip'); toggleMenu();" class="btn btn-yellow"
                 style="width: 100%; text-align: center;">Plan My Trip</a>
@@ -1293,16 +1479,16 @@
                     <div class="package-img">
                         <div class="swiper package-swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="Jaipur Ajmer Pushkar Udaipur Tour/1.webp"
-                                        alt="Jaipur 1"></div>
-                                <div class="swiper-slide"><img src="Jaipur Ajmer Pushkar Udaipur Tour/2.webp"
-                                        alt="Jaipur 2"></div>
-                                <div class="swiper-slide"><img src="Jaipur Ajmer Pushkar Udaipur Tour/3.webp"
-                                        alt="Jaipur 3"></div>
-                                <div class="swiper-slide"><img src="Jaipur Ajmer Pushkar Udaipur Tour/4.webp"
-                                        alt="Jaipur 4"></div>
-                                <div class="swiper-slide"><img src="Jaipur Ajmer Pushkar Udaipur Tour/5.webp"
-                                        alt="Jaipur 5"></div>
+                                <div class="swiper-slide"><a href="jaipur-tour.html"><img
+                                            src="Jaipur Ajmer Pushkar Udaipur Tour/1.webp" alt="Jaipur 1"></a></div>
+                                <div class="swiper-slide"><a href="jaipur-tour.html"><img
+                                            src="Jaipur Ajmer Pushkar Udaipur Tour/2.webp" alt="Jaipur 2"></a></div>
+                                <div class="swiper-slide"><a href="jaipur-tour.html"><img
+                                            src="Jaipur Ajmer Pushkar Udaipur Tour/3.webp" alt="Jaipur 3"></a></div>
+                                <div class="swiper-slide"><a href="jaipur-tour.html"><img
+                                            src="Jaipur Ajmer Pushkar Udaipur Tour/4.webp" alt="Jaipur 4"></a></div>
+                                <div class="swiper-slide"><a href="jaipur-tour.html"><img
+                                            src="Jaipur Ajmer Pushkar Udaipur Tour/5.webp" alt="Jaipur 5"></a></div>
                             </div>
                             <div class="swiper-pagination"></div>
                             <div class="swiper-button-next"></div>
@@ -1344,7 +1530,7 @@
                             <button
                                 onclick="openModal('Jaipur Ajmer Pushkar Udaipur Tour', 'Jaipur Ajmer Pushkar Udaipur Tour/1.webp')"
                                 class="btn-price">Request For Price</button>
-                            <button class="btn-details">View Details</button>
+                            <a href="jaipur-tour.html" class="btn-details">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -1354,16 +1540,16 @@
                     <div class="package-img">
                         <div class="swiper package-swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="Golden Triangle Tour Package/1.webp" alt="GT 1">
-                                </div>
-                                <div class="swiper-slide"><img src="Golden Triangle Tour Package/2.webp" alt="GT 2">
-                                </div>
-                                <div class="swiper-slide"><img src="Golden Triangle Tour Package/3.webp" alt="GT 3">
-                                </div>
-                                <div class="swiper-slide"><img src="Golden Triangle Tour Package/4.webp" alt="GT 4">
-                                </div>
-                                <div class="swiper-slide"><img src="Golden Triangle Tour Package/5.webp" alt="GT 5">
-                                </div>
+                                <div class="swiper-slide"><a href="goldentriangle.html"><img
+                                            src="Golden Triangle Tour Package/1.webp" alt="GT 1"></a></div>
+                                <div class="swiper-slide"><a href="goldentriangle.html"><img
+                                            src="Golden Triangle Tour Package/2.webp" alt="GT 2"></a></div>
+                                <div class="swiper-slide"><a href="goldentriangle.html"><img
+                                            src="Golden Triangle Tour Package/3.webp" alt="GT 3"></a></div>
+                                <div class="swiper-slide"><a href="goldentriangle.html"><img
+                                            src="Golden Triangle Tour Package/4.webp" alt="GT 4"></a></div>
+                                <div class="swiper-slide"><a href="goldentriangle.html"><img
+                                            src="Golden Triangle Tour Package/5.webp" alt="GT 5"></a></div>
                             </div>
                             <div class="swiper-pagination"></div>
                             <div class="swiper-button-next"></div>
@@ -1405,7 +1591,7 @@
                             <button
                                 onclick="openModal('Golden Triangle Tour Package', 'Golden Triangle Tour Package/1.webp')"
                                 class="btn-price">Request For Price</button>
-                            <button class="btn-details">View Details</button>
+                            <a href="goldentriangle.html" class="btn-details">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -1415,11 +1601,16 @@
                     <div class="package-img">
                         <div class="swiper package-swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="North East Himalayan Trip/1.webp" alt="NE 1"></div>
-                                <div class="swiper-slide"><img src="North East Himalayan Trip/2.webp" alt="NE 2"></div>
-                                <div class="swiper-slide"><img src="North East Himalayan Trip/3.webp" alt="NE 3"></div>
-                                <div class="swiper-slide"><img src="North East Himalayan Trip/4.webp" alt="NE 4"></div>
-                                <div class="swiper-slide"><img src="North East Himalayan Trip/5.webp" alt="NE 5"></div>
+                                <div class="swiper-slide"><a href="northeast.html"><img
+                                            src="North East Himalayan Trip/1.webp" alt="NE 1"></a></div>
+                                <div class="swiper-slide"><a href="northeast.html"><img
+                                            src="North East Himalayan Trip/2.webp" alt="NE 2"></a></div>
+                                <div class="swiper-slide"><a href="northeast.html"><img
+                                            src="North East Himalayan Trip/3.webp" alt="NE 3"></a></div>
+                                <div class="swiper-slide"><a href="northeast.html"><img
+                                            src="North East Himalayan Trip/4.webp" alt="NE 4"></a></div>
+                                <div class="swiper-slide"><a href="northeast.html"><img
+                                            src="North East Himalayan Trip/5.webp" alt="NE 5"></a></div>
                             </div>
                             <div class="swiper-pagination"></div>
                             <div class="swiper-button-next"></div>
@@ -1460,7 +1651,7 @@
                         <div class="card-actions">
                             <button onclick="openModal('North East Himalayan Trip', 'North East Himalayan Trip/1.webp')"
                                 class="btn-price">Request For Price</button>
-                            <button class="btn-details">View Details</button>
+                            <a href="northeast.html" class="btn-details">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -1476,11 +1667,16 @@
                     <div class="package-img">
                         <div class="swiper package-swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="Trip to Darjeeling/1.webp" alt="Darjeeling 1"></div>
-                                <div class="swiper-slide"><img src="Trip to Darjeeling/2.webp" alt="Darjeeling 2"></div>
-                                <div class="swiper-slide"><img src="Trip to Darjeeling/3.webp" alt="Darjeeling 3"></div>
-                                <div class="swiper-slide"><img src="Trip to Darjeeling/4.webp" alt="Darjeeling 4"></div>
-                                <div class="swiper-slide"><img src="Trip to Darjeeling/5.webp" alt="Darjeeling 5"></div>
+                                <div class="swiper-slide"><a href="darjeeling-tour.html"><img
+                                            src="Trip to Darjeeling/1.webp" alt="Darjeeling 1"></a></div>
+                                <div class="swiper-slide"><a href="darjeeling-tour.html"><img
+                                            src="Trip to Darjeeling/2.webp" alt="Darjeeling 2"></a></div>
+                                <div class="swiper-slide"><a href="darjeeling-tour.html"><img
+                                            src="Trip to Darjeeling/3.webp" alt="Darjeeling 3"></a></div>
+                                <div class="swiper-slide"><a href="darjeeling-tour.html"><img
+                                            src="Trip to Darjeeling/4.webp" alt="Darjeeling 4"></a></div>
+                                <div class="swiper-slide"><a href="darjeeling-tour.html"><img
+                                            src="Trip to Darjeeling/5.webp" alt="Darjeeling 5"></a></div>
                             </div>
                             <div class="swiper-pagination"></div>
                             <div class="swiper-button-next"></div>
@@ -1521,7 +1717,7 @@
                         <div class="card-actions">
                             <button onclick="openModal('Trip to Darjeeling', 'Trip to Darjeeling/1.webp')"
                                 class="btn-price">Request For Price</button>
-                            <button class="btn-details">View Details</button>
+                            <a href="darjeeling-tour.html" class="btn-details">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -1531,16 +1727,16 @@
                     <div class="package-img">
                         <div class="swiper package-swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="Golden Triangle with Mathura/1.webp"
-                                        alt="Mathura 1"></div>
-                                <div class="swiper-slide"><img src="Golden Triangle with Mathura/2.webp"
-                                        alt="Mathura 2"></div>
-                                <div class="swiper-slide"><img src="Golden Triangle with Mathura/3.webp"
-                                        alt="Mathura 3"></div>
-                                <div class="swiper-slide"><img src="Golden Triangle with Mathura/4.webp"
-                                        alt="Mathura 4"></div>
-                                <div class="swiper-slide"><img src="Golden Triangle with Mathura/5.webp"
-                                        alt="Mathura 5"></div>
+                                <div class="swiper-slide"><a href="mathura-tour.html"><img
+                                            src="Golden Triangle with Mathura/1.webp" alt="Mathura 1"></a></div>
+                                <div class="swiper-slide"><a href="mathura-tour.html"><img
+                                            src="Golden Triangle with Mathura/2.webp" alt="Mathura 2"></a></div>
+                                <div class="swiper-slide"><a href="mathura-tour.html"><img
+                                            src="Golden Triangle with Mathura/3.webp" alt="Mathura 3"></a></div>
+                                <div class="swiper-slide"><a href="mathura-tour.html"><img
+                                            src="Golden Triangle with Mathura/4.webp" alt="Mathura 4"></a></div>
+                                <div class="swiper-slide"><a href="mathura-tour.html"><img
+                                            src="Golden Triangle with Mathura/5.webp" alt="Mathura 5"></a></div>
                             </div>
                             <div class="swiper-pagination"></div>
                             <div class="swiper-button-next"></div>
@@ -1582,7 +1778,7 @@
                             <button
                                 onclick="openModal('Golden Triangle with Mathura', 'Golden Triangle with Mathura/1.webp')"
                                 class="btn-price">Request For Price</button>
-                            <button class="btn-details">View Details</button>
+                            <a href="mathura-tour.html" class="btn-details">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -1592,15 +1788,20 @@
                     <div class="package-img">
                         <div class="swiper package-swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="Golden Triangle With Lakes/1.webp" alt="Lakes 1">
+                                <div class="swiper-slide"><a href="lakes-tour.html"><img
+                                            src="Golden Triangle With Lakes/1.webp" alt="Lakes 1"></a>
                                 </div>
-                                <div class="swiper-slide"><img src="Golden Triangle With Lakes/2.webp" alt="Lakes 2">
+                                <div class="swiper-slide"><a href="lakes-tour.html"><img
+                                            src="Golden Triangle With Lakes/2.webp" alt="Lakes 2"></a>
                                 </div>
-                                <div class="swiper-slide"><img src="Golden Triangle With Lakes/3.webp" alt="Lakes 3">
+                                <div class="swiper-slide"><a href="lakes-tour.html"><img
+                                            src="Golden Triangle With Lakes/3.webp" alt="Lakes 3"></a>
                                 </div>
-                                <div class="swiper-slide"><img src="Golden Triangle With Lakes/4.webp" alt="Lakes 4">
+                                <div class="swiper-slide"><a href="lakes-tour.html"><img
+                                            src="Golden Triangle With Lakes/4.webp" alt="Lakes 4"></a>
                                 </div>
-                                <div class="swiper-slide"><img src="Golden Triangle With Lakes/5.webp" alt="Lakes 5">
+                                <div class="swiper-slide"><a href="lakes-tour.html"><img
+                                            src="Golden Triangle With Lakes/5.webp" alt="Lakes 5"></a>
                                 </div>
                             </div>
                             <div class="swiper-pagination"></div>
@@ -1643,7 +1844,7 @@
                             <button
                                 onclick="openModal('Golden Triangle With Lakes', 'Golden Triangle With Lakes/1.webp')"
                                 class="btn-price">Request For Price</button>
-                            <button class="btn-details">View Details</button>
+                            <a href="lakes-tour.html" class="btn-details">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -1912,7 +2113,6 @@
                 <div class="footer-column">
                     <h4>Our Company</h4>
                     <ul class="links-list">
-                        <li><a href="#">About Us</a></li>
                         <li><a href="#">Contact Us</a></li>
                         <li><a href="#">Our Team</a></li>
                         <li><a href="#">Career</a></li>
