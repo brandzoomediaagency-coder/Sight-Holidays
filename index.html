@@ -448,6 +448,135 @@
             }
         }
 
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            width: 100%;
+            max-width: 900px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 22px;
+            color: #333;
+        }
+
+        .close-modal {
+            font-size: 28px;
+            cursor: pointer;
+            color: #E94B6D;
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        .modal-info-side {
+            text-align: center;
+        }
+
+        .modal-info-side img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .package-badge-modal {
+            background: #E94B6D;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .modal-policy {
+            font-size: 12px;
+            color: #666;
+            text-align: left;
+            margin-top: 20px;
+            border-top: 1px dashed #ddd;
+            padding-top: 15px;
+        }
+
+        .modal-form-side input,
+        .modal-form-side textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .modal-form-side .btn-submit {
+            background-color: #E94B6D;
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-form-side .btn-submit:hover {
+            background-color: #c43a57;
+        }
+
+        @media (max-width: 768px) {
+            .modal-body {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-info-side {
+                display: none;
+            }
+        }
+
         /* Mobile Responsive */
         @media (max-width: 992px) {
             .search-form {
@@ -515,7 +644,7 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="btn btn-yellow">Plan My Trip</a>
+            <a href="javascript:void(0)" onclick="openModal('Plan My Trip')" class="btn btn-yellow">Plan My Trip</a>
         </div>
     </nav>
 
@@ -576,7 +705,9 @@
                         <span><i class="far fa-clock"></i> 5D/4N</span>
                         <span><i class="fas fa-map-marker-alt"></i> Kerala</span>
                     </div>
-                    <a href="#contact" class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
+                    <a href="javascript:void(0)"
+                        onclick="openModal('Kerala Backwaters Paradise', 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=400')"
+                        class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
                 </div>
             </div>
             <!-- Package 2 -->
@@ -592,7 +723,9 @@
                         <span><i class="far fa-clock"></i> 6D/5N</span>
                         <span><i class="fas fa-map-marker-alt"></i> Jaipur</span>
                     </div>
-                    <a href="#contact" class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
+                    <a href="javascript:void(0)"
+                        onclick="openModal('Royal Rajasthan Heritage', 'https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=400')"
+                        class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
                 </div>
             </div>
             <!-- Package 3 -->
@@ -608,7 +741,9 @@
                         <span><i class="far fa-clock"></i> 7D/6N</span>
                         <span><i class="fas fa-map-marker-alt"></i> Indonesia</span>
                     </div>
-                    <a href="#contact" class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
+                    <a href="javascript:void(0)"
+                        onclick="openModal('Bali Tropical Getaway', 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=400')"
+                        class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
                 </div>
             </div>
             <!-- Package 4 -->
@@ -624,7 +759,9 @@
                         <span><i class="far fa-clock"></i> 5D/4N</span>
                         <span><i class="fas fa-map-marker-alt"></i> Dubai</span>
                     </div>
-                    <a href="#contact" class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
+                    <a href="javascript:void(0)"
+                        onclick="openModal('Dubai Skyline Wonders', 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=400')"
+                        class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
                 </div>
             </div>
         </div>
@@ -645,25 +782,29 @@
             </div>
             <div class="package-grid">
                 <!-- Destinations will be cards here -->
-                <div class="package-card" style="text-align: center; padding: 30px;">
+                <div class="package-card" style="text-align: center; padding: 30px; cursor: pointer;"
+                    onclick="openModal('Agra Destination', 'https://images.unsplash.com/photo-1524492717547-2249978cc184?auto=format&fit=crop&q=80&w=400')">
                     <img src="https://images.unsplash.com/photo-1524492717547-2249978cc184?auto=format&fit=crop&q=80&w=100"
                         style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover; margin-bottom: 15px;">
                     <h3>Agra</h3>
                     <p style="color: var(--text-gray); font-size: 13px;">Experience the Taj</p>
                 </div>
-                <div class="package-card" style="text-align: center; padding: 30px;">
+                <div class="package-card" style="text-align: center; padding: 30px; cursor: pointer;"
+                    onclick="openModal('Vietnam Destination', 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&q=80&w=400')">
                     <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&q=80&w=100"
                         style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover; margin-bottom: 15px;">
                     <h3>Vietnam</h3>
                     <p style="color: var(--text-gray); font-size: 13px;">Nature at its best</p>
                 </div>
-                <div class="package-card" style="text-align: center; padding: 30px;">
+                <div class="package-card" style="text-align: center; padding: 30px; cursor: pointer;"
+                    onclick="openModal('Goa Destination', 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&q=80&w=400')">
                     <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&q=80&w=100"
                         style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover; margin-bottom: 15px;">
                     <h3>Goa</h3>
                     <p style="color: var(--text-gray); font-size: 13px;">Beaches & Fun</p>
                 </div>
-                <div class="package-card" style="text-align: center; padding: 30px;">
+                <div class="package-card" style="text-align: center; padding: 30px; cursor: pointer;"
+                    onclick="openModal('Thailand Destination', 'https://images.unsplash.com/photo-1528181304800-2f140819898f?auto=format&fit=crop&q=80&w=400')">
                     <img src="https://images.unsplash.com/photo-1528181304800-2f140819898f?auto=format&fit=crop&q=80&w=100"
                         style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover; margin-bottom: 15px;">
                     <h3>Thailand</h3>
@@ -742,7 +883,7 @@
                     <div class="top-socials" style="margin-top: 20px;">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/919811994646"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -751,6 +892,43 @@
             </div>
         </div>
     </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Price Request for Package</h2>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info-side">
+                    <img id="modalImage"
+                        src="https://images.unsplash.com/photo-1524492717547-2249978cc184?auto=format&fit=crop&q=80&w=400"
+                        alt="Package">
+                    <div class="package-badge-modal">Special Offer</div>
+                    <div class="modal-policy">
+                        <p>• We assure the privacy of your contact data.</p>
+                        <p>• This data will only be used by our team to contact you and no other purposes.</p>
+                    </div>
+                </div>
+                <div class="modal-form-side">
+                    <form id="bookingForm">
+                        <input type="text" id="custName" placeholder="Full Name*" required>
+                        <input type="email" id="custEmail" placeholder="Email Address*" required>
+                        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                            <span
+                                style="padding: 12px; border: 1px solid #ddd; border-radius: 5px; background: #eee;">🇮🇳
+                                +91</span>
+                            <input type="tel" id="custPhone" placeholder="Mobile Number*" style="margin-bottom: 0;"
+                                required>
+                        </div>
+                        <textarea id="custComments" rows="4" placeholder="Comments"></textarea>
+                        <button type="submit" class="btn-submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/919811994646" class="whatsapp-float" target="_blank">
@@ -762,10 +940,60 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('bookingModal');
+        let currentPackage = "";
+
+        function openModal(packageName, imageUrl) {
+            currentPackage = packageName;
+            document.getElementById('modalTitle').innerText = `Price Request for (${packageName})`;
+            if (imageUrl) {
+                document.getElementById('modalImage').src = imageUrl;
+            }
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Form submission to WhatsApp
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('custName').value;
+            const email = document.getElementById('custEmail').value;
+            const phone = document.getElementById('custPhone').value;
+            const comments = document.getElementById('custComments').value;
+
+            const whatsappNumber = "919811994646";
+            const message = `*Price Request from Sight Holidays*%0A%0A` +
+                `*Package:* ${currentPackage}%0A` +
+                `*Name:* ${name}%0A` +
+                `*Email:* ${email}%0A` +
+                `*Phone:* +91 ${phone}%0A` +
+                `*Comments:* ${comments}`;
+
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+            window.open(whatsappUrl, '_blank');
+            closeModal();
+            this.reset();
         });
     </script>
 </body>
