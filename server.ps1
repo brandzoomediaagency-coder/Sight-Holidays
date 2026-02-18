@@ -1,8 +1,8 @@
 $l = [System.Net.HttpListener]::new()
-$l.Prefixes.Add("http://localhost:8081/")
+$l.Prefixes.Add("http://localhost:8082/")
 try {
     $l.Start()
-    Write-Host "Server started on http://localhost:8081/"
+    Write-Host "Server started on http://localhost:8082/"
     while ($l.IsListening) {
         $c = $l.GetContext()
         $urlPath = $c.Request.Url.LocalPath

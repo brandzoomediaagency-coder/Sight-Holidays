@@ -1,0 +1,606 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashmir Houseboat Tour Package | Sight Holidays</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --yellow: #FFC107;
+            --yellow-hover: #e6ac00;
+            --black: #1A1A1A;
+            --deep-black: #000000;
+            --white: #ffffff;
+            --text-gray: #666666;
+            --light-gray: #f8f9fa;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-premium: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Reusing Sticky Nav from index.html */
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links li a {
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--black);
+            padding: 10px 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-links li a i {
+            font-size: 12px;
+            color: var(--text-gray);
+            transition: var(--transition);
+        }
+
+        .nav-links li:hover>a {
+            color: var(--yellow);
+        }
+
+        .nav-links li:hover>a i {
+            transform: rotate(180deg);
+            color: var(--yellow);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: var(--shadow-premium);
+            border-radius: 8px;
+            padding: 15px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: var(--transition);
+            z-index: 1001;
+            border-top: 3px solid var(--yellow);
+        }
+
+        .nav-links li:hover>.dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown li {
+            width: 100%;
+        }
+
+        .dropdown li a {
+            padding: 10px 25px !important;
+            font-size: 14px !important;
+            color: var(--black) !important;
+            width: 100% !important;
+            display: block !important;
+            transition: all 0.3s ease !important;
+            transform: none !important;
+        }
+
+        .dropdown li a:hover {
+            background: var(--light-gray) !important;
+            color: var(--yellow) !important;
+            padding-left: 30px !important;
+        }
+
+        /* Mobile Adjustments for detailed pages */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--deep-black);
+        }
+
+        .logo-text span {
+            color: var(--yellow);
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-yellow {
+            background-color: var(--yellow);
+            color: var(--deep-black);
+        }
+
+        .btn-yellow:hover {
+            background-color: var(--yellow-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Package Hero */
+        .package-hero {
+            height: 60vh;
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Jaipur Ajmer Pushkar Udaipur Tour hadder.png') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 60px;
+            color: var(--white);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .package-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .package-meta span i {
+            color: var(--yellow);
+            margin-right: 8px;
+        }
+
+        /* Content Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            padding-bottom: 60px;
+        }
+
+        .card-white {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-premium);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: var(--yellow);
+        }
+
+        /* Itinerary Timeline */
+        .itinerary {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .itinerary::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #eee;
+        }
+
+        .day-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .day-box::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--yellow);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 4px #fff;
+        }
+
+        .day-title {
+            font-weight: 700;
+            color: var(--yellow);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .day-heading {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .day-content ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            list-style: disc;
+            color: var(--text-gray);
+        }
+
+        /* Inclusions / Exclusions */
+        .list-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .list-item {
+            display: flex;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--text-gray);
+        }
+
+        .list-item i {
+            margin-top: 4px;
+        }
+
+        .fa-check-circle {
+            color: #2ecc71;
+        }
+
+        .fa-times-circle {
+            color: #e74c3c;
+        }
+
+        /* Sidebar Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-booking {
+            background: var(--black);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .sidebar-booking h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--yellow);
+        }
+
+        .sidebar-booking p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 25px;
+        }
+
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            margin-top: 15px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .package-hero {
+                height: 40vh;
+            }
+
+            .hero-content h1 {
+                font-size: 24px;
+            }
+
+            .list-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo-area">
+                <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="logo.jpeg" alt="Sight Holidays" style="height: 50px;">
+                    <div>
+                        <span class="logo-text">SIGHT <span>HOLIDAYS</span></span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="india-tour.html">India Tour</a></li>
+                <li><a href="index.html#packages">Sight Special</a></li>
+            </ul>
+            <div class="header-actions">
+                <div class="menu-toggle" onclick="toggleMenu()" style="cursor: pointer; font-size: 24px;">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <a href="index.html" class="btn btn-yellow" style="display: none;">Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="drawer-overlay" onclick="toggleMenu()"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: none;">
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer"
+        style="position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background: #fff; z-index: 1001; transition: 0.3s; padding: 20px;">
+        <div class="drawer-links" style="display: flex; flex-direction: column; gap: 15px; margin-top: 40px;">
+            <a href="index.html">Home</a>
+            <a href="india-tour.html">India Tour</a>
+            <a href="jaipur-tour.html">Rajasthan</a>
+            <a href="northeast.html">North East</a>
+            <a href="darjeeling-tour.html">Darjeeling</a>
+            <a href="index.html#contact">Contact Us</a>
+        </div>
+        <div class="drawer-socials" style="margin-top: 30px; display: flex; gap: 15px;">
+            <a href="https://www.facebook.com/sightholidays" target="_blank"
+                style="color: var(--black); font-size: 20px;"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/sightholidays" target="_blank"
+                style="color: var(--black); font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/sightholidays" target="_blank" style="color: var(--black); font-size: 20px;"><i
+                    class="fab fa-x-twitter"></i></a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (drawer.style.right === '0px') {
+                drawer.style.right = '-300px';
+                overlay.style.display = 'none';
+            } else {
+                drawer.style.right = '0px';
+                overlay.style.display = 'block';
+            }
+        }
+    </script>
+
+    <section class="package-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/featured/?houseboat,kashmir') center/cover no-repeat;">
+        <div class="container hero-content">
+            <h1>Kashmir Houseboat Tour Package</h1>
+            <div class="package-meta">
+                <span><i class="fas fa-clock"></i> 5 Night / 6 Days</span>
+                <span><i class="fas fa-map-marker-alt"></i> Kashmir</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container content-grid">
+        <div class="main-content">
+            <!-- Overview -->
+            <div class="card-white">
+                <h2 class="section-title"><i class="fas fa-info-circle"></i> Tour Overview</h2>
+                <p>Experience the magic of Kashmir with our exclusive <strong>Kashmir Houseboat Tour Package</strong>. carefully curated itinerary covering the best scenic spots, cultural heritage, and adventure experiences.</p>
+            </div>
+
+            <!-- Itinerary -->
+            <div class="card-white">
+                <h2 class="section-title"><i class="fas fa-route"></i> Travel Itinerary</h2>
+                <div class="itinerary">
+                                        <div class="day-box">
+                        <div class="day-title">Day 1</div>
+                        <div class="day-heading">Arrival & Leisure</div>
+                        <div class="day-content">
+                            <p>Arrive at the destination and transfer to your hotel. Spend the day at leisure exploring local markets.</p>
+                        </div>
+                    </div>                    <div class="day-box">
+                        <div class="day-title">Day 2</div>
+                        <div class="day-heading">Sightseeing & Exploration</div>
+                        <div class="day-content">
+                            <p>Enjoy a delicious breakfast and head out for a full day of sightseeing. Visit famous landmarks and enjoy the scenic beauty.</p>
+                        </div>
+                    </div>                    <div class="day-box">
+                        <div class="day-title">Day 3</div>
+                        <div class="day-heading">Sightseeing & Exploration</div>
+                        <div class="day-content">
+                            <p>Enjoy a delicious breakfast and head out for a full day of sightseeing. Visit famous landmarks and enjoy the scenic beauty.</p>
+                        </div>
+                    </div>                    <div class="day-box">
+                        <div class="day-title">Day 4</div>
+                        <div class="day-heading">Sightseeing & Exploration</div>
+                        <div class="day-content">
+                            <p>Enjoy a delicious breakfast and head out for a full day of sightseeing. Visit famous landmarks and enjoy the scenic beauty.</p>
+                        </div>
+                    </div>                    <div class="day-box">
+                        <div class="day-title">Day 5</div>
+                        <div class="day-heading">Sightseeing & Exploration</div>
+                        <div class="day-content">
+                            <p>Enjoy a delicious breakfast and head out for a full day of sightseeing. Visit famous landmarks and enjoy the scenic beauty.</p>
+                        </div>
+                    </div>                    <div class="day-box">
+                        <div class="day-title">Day 6</div>
+                        <div class="day-heading">Departure</div>
+                        <div class="day-content">
+                            <p>After breakfast, check out and transfer to the airport/railway station for your onward journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inclusions -->
+            <div class="card-white">
+                <h2 class="section-title"><i class="fas fa-check-circle"></i> What's Included</h2>
+                <div class="list-grid">
+                    <div class="list-item"><i class="fas fa-check-circle"></i> Accommodation on Twin/Triple Sharing.
+                    </div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i> Breakfast and Veg Dinner daily.</div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i> AC Vehicle for all transfers & tours.
+                    </div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i> Airport/Railway station assistance.</div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i> Driver Allowances & Fuel charges.</div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i> All applicable Taxes & Tolls.</div>
+                </div>
+            </div>
+
+            <!-- Exclusions -->
+            <div class="card-white" style="border-top: 5px solid #e74c3c;">
+                <h2 class="section-title" style="color: #e74c3c;"><i class="fas fa-times-circle"></i> What's Excluded
+                </h2>
+                <div class="list-grid">
+                    <div class="list-item"><i class="fas fa-times-circle"></i> Personal expenses (laundry, tips, etc).
+                    </div>
+                    <div class="list-item"><i class="fas fa-times-circle"></i> Monuments & Sightseeing entry fees.</div>
+                    <div class="list-item"><i class="fas fa-times-circle"></i> Boating or Camel ride charges.</div>
+                    <div class="list-item"><i class="fas fa-times-circle"></i> Anything not mentioned in inclusions.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-booking">
+                <h3>Request a Quote</h3>
+                <p>Get the best personalized price for your travel dates and group size!</p>
+                <button onclick="window.location.href='index.html#contact'" class="btn btn-yellow btn-full">Get Free
+                    Details</button>
+                <a href="https://wa.me/919811994646?text=I%20am%20interested%20in%20Jaipur%20Ajmer%20Pushkar%20Udaipur%20Tour"
+                    class="btn whatsapp-btn btn-full">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reusing Footer from index.html -->
+    <footer style="background: var(--black); color: #fff; padding: 60px 0 20px;">
+        <div class="container" style="text-align: center;">
+            <span class="logo-text" style="color: #fff;">SIGHT <span>HOLIDAYS</span></span>
+            <div class="footer-socials" style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
+                <a href="https://www.facebook.com/sightholidays" target="_blank"
+                    style="color: rgba(255,255,255,0.6); font-size: 18px;"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sightholidays" target="_blank"
+                    style="color: rgba(255,255,255,0.6); font-size: 18px;"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/sightholidays" target="_blank"
+                    style="color: rgba(255,255,255,0.6); font-size: 18px;"><i class="fab fa-x-twitter"></i></a>
+            </div>
+            <p style="margin-top: 20px; opacity: 0.6; font-size: 14px;">Â© 2026 Sight Holidays. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
