@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,6 +15,8 @@
         rel="stylesheet">
     <!-- Font Awesome (for icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         :root {
             --yellow: #FFED00;
@@ -413,6 +415,22 @@
             font-size: 14px;
         }
 
+        /* Swiper Custom Style */
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--yellow) !important;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--yellow) !important;
+            transform: scale(0.5);
+        }
+
         /* Categories Section */
         .cat-section {
             background-color: var(--light-gray);
@@ -809,8 +827,23 @@
                 <!-- Package 1: Jaipur -->
                 <div class="package-card">
                     <div class="package-img">
-                        <img src="https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=400"
-                            alt="Jaipur">
+                        <div class="swiper jaipur-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="Jaipur Ajmer Pushkar Udaipur Tour/1.webp"
+                                        alt="Jaipur 1"></div>
+                                <div class="swiper-slide"><img src="Jaipur Ajmer Pushkar Udaipur Tour/2.webp"
+                                        alt="Jaipur 2"></div>
+                                <div class="swiper-slide"><img src="Jaipur Ajmer Pushkar Udaipur Tour/3.webp"
+                                        alt="Jaipur 3"></div>
+                                <div class="swiper-slide"><img src="Jaipur Ajmer Pushkar Udaipur Tour/4.webp"
+                                        alt="Jaipur 4"></div>
+                                <div class="swiper-slide"><img src="Jaipur Ajmer Pushkar Udaipur Tour/5.webp"
+                                        alt="Jaipur 5"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
                         <div class="price-tag">Best Price</div>
                     </div>
                     <div class="package-info" style="padding:15px;">
@@ -819,9 +852,9 @@
                         <div class="route-path">
                             <span style="font-weight:600; color:#333;">Route :</span>
                             <span class="route-item">Starts from Jaipur</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-item">2N Jaipur</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-plus">+3</span>
                         </div>
                         <div class="inclusion-container">
@@ -865,9 +898,9 @@
                         <div class="route-path">
                             <span style="font-weight:600; color:#333;">Route :</span>
                             <span class="route-item">Starts from Delhi</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-item">02N Delhi</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-plus">+3</span>
                         </div>
                         <div class="inclusion-container">
@@ -911,9 +944,9 @@
                         <div class="route-path">
                             <span style="font-weight:600; color:#333;">Route :</span>
                             <span class="route-item">Starts from NJP/IXB</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-item">2N Gangtok</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-plus">+5</span>
                         </div>
                         <div class="inclusion-container">
@@ -963,9 +996,9 @@
                         <div class="route-path">
                             <span style="font-weight:600; color:#333;">Route :</span>
                             <span class="route-item">Starts from NJP/IXB</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-item">3N Darjeeling</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-plus">+1</span>
                         </div>
                         <div class="inclusion-container">
@@ -1009,9 +1042,9 @@
                         <div class="route-path">
                             <span style="font-weight:600; color:#333;">Route :</span>
                             <span class="route-item">Starts from Delhi</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-item">2N Delhi</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-plus">+4</span>
                         </div>
                         <div class="inclusion-container">
@@ -1055,9 +1088,9 @@
                         <div class="route-path">
                             <span style="font-weight:600; color:#333;">Route :</span>
                             <span class="route-item">Starts from 2 Night Delhi</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-item">1Agra</span>
-                            <span class="route-arrow">→</span>
+                            <span class="route-arrow">â†’</span>
                             <span class="route-plus">+2</span>
                         </div>
                         <div class="inclusion-container">
@@ -1146,19 +1179,19 @@
         </div>
         <div class="test-slider">
             <div class="test-item">
-                <div style="color: var(--yellow); margin-bottom: 10px;">★★★★★</div>
+                <div style="color: var(--yellow); margin-bottom: 10px;">â˜…â˜…â˜…â˜…â˜…</div>
                 <p>"Excellent service! The Rajasthan tour was perfectly planned. Special thanks to the support team for
                     24/7 assistance."</p>
                 <div style="margin-top: 20px; font-weight: 600;">- Rahul Gupta</div>
             </div>
             <div class="test-item">
-                <div style="color: var(--yellow); margin-bottom: 10px;">★★★★★</div>
+                <div style="color: var(--yellow); margin-bottom: 10px;">â˜…â˜…â˜…â˜…â˜…</div>
                 <p>"Best prices for Dubai packages. I compared many agencies but Sight Holidays gave me the best deal
                     with 5-star hotels."</p>
                 <div style="margin-top: 20px; font-weight: 600;">- Priya Sharma</div>
             </div>
             <div class="test-item">
-                <div style="color: var(--yellow); margin-bottom: 10px;">★★★★★</div>
+                <div style="color: var(--yellow); margin-bottom: 10px;">â˜…â˜…â˜…â˜…â˜…</div>
                 <p>"Mesmerizing memories indeed. The Kerala backwaters trip was the highlight of our year. Totally
                     hassle-free!"</p>
                 <div style="margin-top: 20px; font-weight: 600;">- Amit Verma</div>
@@ -1231,8 +1264,8 @@
                         alt="Package">
                     <div class="package-badge-modal">Special Offer</div>
                     <div class="modal-policy">
-                        <p>• We assure the privacy of your contact data.</p>
-                        <p>• This data will only be used by our team to contact you and no other purposes.</p>
+                        <p>â€¢ We assure the privacy of your contact data.</p>
+                        <p>â€¢ This data will only be used by our team to contact you and no other purposes.</p>
                     </div>
                 </div>
                 <div class="modal-form-side">
@@ -1241,7 +1274,7 @@
                         <input type="email" id="custEmail" placeholder="Email Address*" required>
                         <div style="display: flex; gap: 10px; margin-bottom: 15px;">
                             <span
-                                style="padding: 12px; border: 1px solid #ddd; border-radius: 5px; background: #eee;">🇮🇳
+                                style="padding: 12px; border: 1px solid #ddd; border-radius: 5px; background: #eee;">ðŸ‡®ðŸ‡³
                                 +91</span>
                             <input type="tel" id="custPhone" placeholder="Mobile Number*" style="margin-bottom: 0;"
                                 required>
@@ -1271,6 +1304,28 @@
                     });
                 }
             });
+        });
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.jaipur-swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
         });
 
         // Modal Logic
