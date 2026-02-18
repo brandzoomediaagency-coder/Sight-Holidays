@@ -1116,28 +1116,34 @@
 
         .modal-header {
             padding: 20px 30px;
-            border-bottom: 1px solid #eee;
+            /* Border removed for cleaner look */
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .modal-header h2 {
-            font-size: 22px;
+            font-size: 20px;
             color: #333;
+            font-weight: 600;
         }
 
         .close-modal {
             font-size: 28px;
             cursor: pointer;
             color: #E94B6D;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
         }
 
         .modal-body {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding: 30px;
-            gap: 30px;
+            grid-template-columns: 1fr 1.2fr;
+            padding: 0 30px 30px;
+            gap: 40px;
         }
 
         .modal-info-side {
@@ -1146,17 +1152,19 @@
 
         .modal-info-side img {
             width: 100%;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .package-badge-modal {
-            background: #E94B6D;
-            color: white;
-            padding: 5px 20px;
+            background: #ffebf0;
+            color: #E94B6D;
+            padding: 8px 25px;
             border-radius: 20px;
             display: inline-block;
             font-size: 14px;
+            font-weight: 600;
             margin-bottom: 20px;
         }
 
@@ -1164,36 +1172,93 @@
             font-size: 12px;
             color: #666;
             text-align: left;
-            margin-top: 20px;
-            border-top: 1px dashed #ddd;
+            margin-top: 10px;
             padding-top: 15px;
+            border-top: 1px dashed #eee;
+        }
+
+        .modal-policy ul {
+            padding-left: 15px;
+            list-style-type: disc;
+        }
+
+        .modal-policy li {
+            margin-bottom: 5px;
+            line-height: 1.4;
         }
 
         .modal-form-side input,
         .modal-form-side textarea {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
             outline: none;
-        }
-
-        .modal-form-side .btn-submit {
-            background-color: #E94B6D;
-            color: white;
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 30px;
-            font-weight: 700;
-            text-transform: uppercase;
-            cursor: pointer;
+            font-size: 14px;
+            color: #333;
             transition: var(--transition);
         }
 
+        .modal-form-side input:focus,
+        .modal-form-side textarea:focus {
+            border-color: #E94B6D;
+            box-shadow: 0 0 5px rgba(233, 75, 109, 0.2);
+        }
+
+        /* Improved Phone Input Styling */
+        .phone-input-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .phone-input-group:focus-within {
+            border-color: #E94B6D;
+            box-shadow: 0 0 5px rgba(233, 75, 109, 0.2);
+        }
+
+        .phone-flag {
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            background: #f9f9f9;
+            border-right: 1px solid #eee;
+            gap: 5px;
+            font-size: 14px;
+            color: #555;
+            height: 45px;
+        }
+
+        .phone-input-group input {
+            border: none !important;
+            margin-bottom: 0 !important;
+            box-shadow: none !important;
+            height: 45px;
+        }
+
+        .modal-form-side .btn-submit {
+            background: linear-gradient(90deg, #FA7199 0%, #E94B6D 100%);
+            color: white;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(233, 75, 109, 0.3);
+        }
+
         .modal-form-side .btn-submit:hover {
-            background-color: #c43a57;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 75, 109, 0.4);
         }
 
         @media (max-width: 768px) {
@@ -2354,23 +2419,27 @@
                     <img id="modalImage"
                         src="https://images.unsplash.com/photo-1524492717547-2249978cc184?auto=format&fit=crop&q=80&w=400"
                         alt="Package">
-                    <div class="package-badge-modal">Special Offer</div>
+                    <div id="modalBadge" class="package-badge-modal"></div>
                     <div class="modal-policy">
-                        <p>â€¢ We assure the privacy of your contact data.</p>
-                        <p>â€¢ This data will only be used by our team to contact you and no other purposes.</p>
+                        <ul>
+                            <li>We assure the privacy of your contact data.</li>
+                            <li>This data will only be used by our team to contact you and no other purposes.</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="modal-form-side">
                     <form id="bookingForm">
                         <input type="text" id="custName" placeholder="Full Name*" required>
                         <input type="email" id="custEmail" placeholder="Email Address*" required>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                            <span
-                                style="padding: 12px; border: 1px solid #ddd; border-radius: 5px; background: #eee;">ðŸ‡®ðŸ‡³
-                                +91</span>
-                            <input type="tel" id="custPhone" placeholder="Mobile Number*" style="margin-bottom: 0;"
-                                required>
+
+                        <div class="phone-input-group">
+                            <div class="phone-flag">
+                                <img src="https://flagcdn.com/w20/in.png" alt="India Flag" style="width: 20px;">
+                                <span>+91</span>
+                            </div>
+                            <input type="tel" id="custPhone" placeholder="Mobile Number*" required>
                         </div>
+
                         <textarea id="custComments" rows="4" placeholder="Comments"></textarea>
                         <button type="submit" class="btn-submit">Submit</button>
                     </form>
@@ -2513,6 +2582,26 @@
             if (imageUrl) {
                 document.getElementById('modalImage').src = imageUrl;
             }
+
+            // Dynamic Duration Badge
+            const badge = document.getElementById('modalBadge');
+            badge.style.display = 'none'; // Hide by default
+
+            // Find the package card that triggered this
+            const allH3 = Array.from(document.querySelectorAll('.package-info h3'));
+            const targetH3 = allH3.find(h3 => h3.innerText.trim() === packageName);
+
+            if (targetH3) {
+                const card = targetH3.closest('.package-info');
+                if (card) {
+                    const durationSpan = card.querySelector('.card-duration span');
+                    if (durationSpan) {
+                        badge.innerText = durationSpan.innerText;
+                        badge.style.display = 'inline-block';
+                    }
+                }
+            }
+
             modal.style.display = "flex";
         }
 
