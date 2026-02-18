@@ -308,6 +308,111 @@
             margin-bottom: 15px;
         }
 
+        /* New Package Card Design */
+        .card-duration {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .card-duration span {
+            color: #666;
+            font-weight: 400;
+        }
+
+        .route-path {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .route-item {
+            background: #f0f0f0;
+            padding: 2px 10px;
+            border-radius: 4px;
+            color: #333;
+        }
+
+        .route-arrow {
+            color: #999;
+        }
+
+        .route-plus {
+            background: #f0f0f0;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .inclusion-container {
+            border: 1px solid #E94B6D;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+
+        .inclusion-label {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .inclusion-item i {
+            display: block;
+            font-size: 20px;
+            color: #E94B6D;
+            margin-bottom: 5px;
+        }
+
+        .inclusion-item span {
+            font-size: 11px;
+            color: #333;
+        }
+
+        .card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .btn-price {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-details {
+            background-color: #E94B6D;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
         /* Categories Section */
         .cat-section {
             background-color: var(--light-gray);
@@ -575,6 +680,11 @@
             .modal-info-side {
                 display: none;
             }
+
+            .inclusion-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
         }
 
         /* Mobile Responsive */
@@ -688,80 +798,283 @@
     <!-- Top Trending Packages -->
     <section id="packages" class="container">
         <div class="section-title">
-            <h2>Top Trending Packages</h2>
-            <p>Hand-picked experiences just for you</p>
+            <h2>Our Popular Holiday Packages</h2>
+            <p>Hand-picked experiences for mesmerizing memorable memories</p>
         </div>
         <div class="package-grid">
-            <!-- Package 1 -->
-            <div class="package-card">
-                <div class="package-img">
-                    <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=400"
-                        alt="Kerala">
-                    <div class="price-tag">₹ 15,999/-</div>
-                </div>
-                <div class="package-info">
-                    <h3>Kerala Backwaters Paradise</h3>
-                    <div class="package-meta">
-                        <span><i class="far fa-clock"></i> 5D/4N</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Kerala</span>
-                    </div>
-                    <a href="javascript:void(0)"
-                        onclick="openModal('Kerala Backwaters Paradise', 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=400')"
-                        class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
-                </div>
-            </div>
-            <!-- Package 2 -->
+            <!-- Package 1: Jaipur -->
             <div class="package-card">
                 <div class="package-img">
                     <img src="https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=400"
-                        alt="Rajasthan">
-                    <div class="price-tag">₹ 12,500/-</div>
+                        alt="Jaipur">
+                    <div class="price-tag">Best Price</div>
                 </div>
-                <div class="package-info">
-                    <h3>Royal Rajasthan Heritage</h3>
-                    <div class="package-meta">
-                        <span><i class="far fa-clock"></i> 6D/5N</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Jaipur</span>
+                <div class="package-info" style="padding:15px;">
+                    <h3 style="font-size:18px; margin-bottom:10px;">Jaipur Ajmer Pushkar Udaipur Tour</h3>
+                    <div class="card-duration">Duration : <span>5 Night / 6 Days</span></div>
+                    <div class="route-path">
+                        <span style="font-weight:600; color:#333;">Route :</span>
+                        <span class="route-item">Starts from Jaipur</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-item">2N Jaipur</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-plus">+3</span>
                     </div>
-                    <a href="javascript:void(0)"
-                        onclick="openModal('Royal Rajasthan Heritage', 'https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=400')"
-                        class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
+                    <div class="inclusion-container">
+                        <span class="inclusion-label">Inclusion :</span>
+                        <div class="inclusion-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Meals</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-hotel"></i>
+                            <span>Stay</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-car"></i>
+                            <span>Transfer</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Sightseeing</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button
+                            onclick="openModal('Jaipur Ajmer Pushkar Udaipur Tour', 'https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=400')"
+                            class="btn-price">Request For Price</button>
+                        <button class="btn-details">View Details</button>
+                    </div>
                 </div>
             </div>
-            <!-- Package 3 -->
+
+            <!-- Package 2: Golden Triangle -->
             <div class="package-card">
                 <div class="package-img">
-                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=400"
-                        alt="Bali">
-                    <div class="price-tag">₹ 45,000/-</div>
+                    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&q=80&w=400"
+                        alt="Delhi">
+                    <div class="price-tag">Best Price</div>
                 </div>
-                <div class="package-info">
-                    <h3>Bali Tropical Getaway</h3>
-                    <div class="package-meta">
-                        <span><i class="far fa-clock"></i> 7D/6N</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Indonesia</span>
+                <div class="package-info" style="padding:15px;">
+                    <h3 style="font-size:18px; margin-bottom:10px;">Golden Triangle Tour Package</h3>
+                    <div class="card-duration">Duration : <span>5 Night / 6 Days</span></div>
+                    <div class="route-path">
+                        <span style="font-weight:600; color:#333;">Route :</span>
+                        <span class="route-item">Starts from Delhi</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-item">02N Delhi</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-plus">+3</span>
                     </div>
-                    <a href="javascript:void(0)"
-                        onclick="openModal('Bali Tropical Getaway', 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=400')"
-                        class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
+                    <div class="inclusion-container">
+                        <span class="inclusion-label">Inclusion :</span>
+                        <div class="inclusion-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Meals</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-hotel"></i>
+                            <span>Stay</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-car"></i>
+                            <span>Transfer</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Sightseeing</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button
+                            onclick="openModal('Golden Triangle Tour Package', 'https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&q=80&w=400')"
+                            class="btn-price">Request For Price</button>
+                        <button class="btn-details">View Details</button>
+                    </div>
                 </div>
             </div>
-            <!-- Package 4 -->
+
+            <!-- Package 3: North East -->
             <div class="package-card">
                 <div class="package-img">
-                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=400"
-                        alt="Dubai">
-                    <div class="price-tag">₹ 55,000/-</div>
+                    <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&q=80&w=400"
+                        alt="North East">
+                    <div class="price-tag">Best Price</div>
                 </div>
-                <div class="package-info">
-                    <h3>Dubai Skyline Wonders</h3>
-                    <div class="package-meta">
-                        <span><i class="far fa-clock"></i> 5D/4N</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Dubai</span>
+                <div class="package-info" style="padding:15px;">
+                    <h3 style="font-size:18px; margin-bottom:10px;">North East Himalayan Trip</h3>
+                    <div class="card-duration">Duration : <span>8 Night / 9 Days</span></div>
+                    <div class="route-path">
+                        <span style="font-weight:600; color:#333;">Route :</span>
+                        <span class="route-item">Starts from NJP/IXB</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-item">2N Gangtok</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-plus">+5</span>
                     </div>
-                    <a href="javascript:void(0)"
-                        onclick="openModal('Dubai Skyline Wonders', 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=400')"
-                        class="btn btn-yellow" style="width: 100%; text-align: center;">Book Now</a>
+                    <div class="inclusion-container">
+                        <span class="inclusion-label">Inclusion :</span>
+                        <div class="inclusion-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Meals</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-hotel"></i>
+                            <span>Stay</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-car"></i>
+                            <span>Transfer</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Sightseeing</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button
+                            onclick="openModal('North East Himalayan Trip', 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&q=80&w=400')"
+                            class="btn-price">Request For Price</button>
+                        <button class="btn-details">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 4: Darjeeling -->
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=400"
+                        alt="Darjeeling">
+                    <div class="price-tag">Best Price</div>
+                </div>
+                <div class="package-info" style="padding:15px;">
+                    <h3 style="font-size:18px; margin-bottom:10px;">Trip to Darjeeling</h3>
+                    <div class="card-duration">Duration : <span>3 Night / 4 Days</span></div>
+                    <div class="route-path">
+                        <span style="font-weight:600; color:#333;">Route :</span>
+                        <span class="route-item">Starts from NJP/IXB</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-item">3N Darjeeling</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-plus">+1</span>
+                    </div>
+                    <div class="inclusion-container">
+                        <span class="inclusion-label">Inclusion :</span>
+                        <div class="inclusion-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Meals</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-hotel"></i>
+                            <span>Stay</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-car"></i>
+                            <span>Transfer</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Sightseeing</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button
+                            onclick="openModal('Trip to Darjeeling', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=400')"
+                            class="btn-price">Request For Price</button>
+                        <button class="btn-details">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 5: GT Mathura -->
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea023?auto=format&fit=crop&q=80&w=400"
+                        alt="Mathura">
+                    <div class="price-tag">Best Price</div>
+                </div>
+                <div class="package-info" style="padding:15px;">
+                    <h3 style="font-size:18px; margin-bottom:10px;">Golden Triangle with Mathura</h3>
+                    <div class="card-duration">Duration : <span>6 Night / 7 Days</span></div>
+                    <div class="route-path">
+                        <span style="font-weight:600; color:#333;">Route :</span>
+                        <span class="route-item">Starts from Delhi</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-item">2N Delhi</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-plus">+4</span>
+                    </div>
+                    <div class="inclusion-container">
+                        <span class="inclusion-label">Inclusion :</span>
+                        <div class="inclusion-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Meals</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-hotel"></i>
+                            <span>Stay</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-car"></i>
+                            <span>Transfer</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Sightseeing</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button
+                            onclick="openModal('Golden Triangle with Mathura', 'https://images.unsplash.com/photo-1564507592333-c60657eea023?auto=format&fit=crop&q=80&w=400')"
+                            class="btn-price">Request For Price</button>
+                        <button class="btn-details">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 6: GT Lakes -->
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://images.unsplash.com/photo-1627883901905-2d4496f8c792?auto=format&fit=crop&q=80&w=400"
+                        alt="Lakes">
+                    <div class="price-tag">Best Price</div>
+                </div>
+                <div class="package-info" style="padding:15px;">
+                    <h3 style="font-size:18px; margin-bottom:10px;">Golden Triangle With Lakes</h3>
+                    <div class="card-duration">Duration : <span>7 Night / 8 Days</span></div>
+                    <div class="route-path">
+                        <span style="font-weight:600; color:#333;">Route :</span>
+                        <span class="route-item">Starts from 2 Night Delhi</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-item">1Agra</span>
+                        <span class="route-arrow">→</span>
+                        <span class="route-plus">+2</span>
+                    </div>
+                    <div class="inclusion-container">
+                        <span class="inclusion-label">Inclusion :</span>
+                        <div class="inclusion-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Meals</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-hotel"></i>
+                            <span>Stay</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-car"></i>
+                            <span>Transfer</span>
+                        </div>
+                        <div class="inclusion-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Sightseeing</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button
+                            onclick="openModal('Golden Triangle With Lakes', 'https://images.unsplash.com/photo-1627883901905-2d4496f8c792?auto=format&fit=crop&q=80&w=400')"
+                            class="btn-price">Request For Price</button>
+                        <button class="btn-details">View Details</button>
+                    </div>
                 </div>
             </div>
         </div>
