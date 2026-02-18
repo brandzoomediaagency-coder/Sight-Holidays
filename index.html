@@ -19,13 +19,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         :root {
-            --yellow: #FFED00;
-            --black: #000000;
-            --dark-gray: #1a1a1a;
-            --light-gray: #f4f4f4;
+            --yellow: #FFC107;
+            /* Golden Amber */
+            --black: #1A1A1A;
+            /* Deep Charcoal */
+            --pure-black: #000000;
+            --dark-gray: #333333;
+            --light-gray: #F5F5F5;
             --white: #ffffff;
+            --accent: #E94B6D;
             --text-gray: #666666;
-            --transition: all 0.3s ease;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
         }
 
         * {
@@ -183,6 +190,123 @@
 
         .nav-links a:hover {
             color: var(--yellow);
+        }
+
+        /* Mobile Menu Drawer */
+        .header-actions {
+            display: none;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--black);
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100%;
+            background: var(--white);
+            z-index: 2001;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .mobile-drawer.active {
+            right: 0;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            display: none;
+            backdrop-filter: blur(4px);
+        }
+
+        .drawer-overlay.active {
+            display: block;
+        }
+
+        .drawer-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .drawer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .drawer-links a {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .drawer-contact {
+            margin-top: auto;
+            border-top: 2px solid var(--yellow);
+            padding-top: 20px;
+        }
+
+        .drawer-contact p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: var(--text-gray);
+        }
+
+        /* Quick Action Bar */
+        .quick-action-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            z-index: 1000;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .qa-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .qa-call {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .qa-wa {
+            background: #25d366;
+            color: var(--white);
         }
 
         /* Hero Section */
@@ -983,6 +1107,25 @@
                 padding-left: 20px;
             }
         }
+
+        @media (max-width: 768px) {
+            .package-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .quick-action-bar {
+                display: grid;
+            }
+
+            body {
+                padding-bottom: 70px;
+                /* Space for mobile bar */
+            }
+
+            .header-actions {
+                display: flex;
+            }
+        }
     </style>
 </head>
 
@@ -1023,9 +1166,43 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="header-actions">
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
             <a href="javascript:void(0)" onclick="openModal('Plan My Trip')" class="btn btn-yellow">Plan My Trip</a>
         </div>
     </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="drawer-overlay" onclick="toggleMenu()"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-close" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="logo-area" style="padding: 20px 0;">
+            <span class="logo-text">SIGHT <span>HOLIDAYS</span></span>
+        </div>
+        <div class="drawer-links">
+            <a href="#" onclick="toggleMenu()">Home</a>
+            <a href="#packages" onclick="toggleMenu()">India Tour</a>
+            <a href="#international" onclick="toggleMenu()">International</a>
+            <a href="#about" onclick="toggleMenu()">About Us</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
+        </div>
+        <div class="drawer-contact">
+            <p><i class="fas fa-phone"></i> +91 9811994646</p>
+            <p><i class="fas fa-envelope"></i> sales@sightholidays.com</p>
+            <div class="top-socials" style="display: flex; margin-top: 15px;">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero -->
     <section id="hero">
@@ -1800,6 +1977,16 @@
         </div>
     </div>
 
+    <!-- Quick Action Bar -->
+    <div class="quick-action-bar">
+        <a href="tel:919811994646" class="qa-btn qa-call">
+            <i class="fas fa-phone"></i> Call Now
+        </a>
+        <a href="https://wa.me/919811994646" class="qa-btn qa-wa">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
+
     <!-- WhatsApp Button -->
     <a href="https://wa.me/919811994646" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
@@ -1818,6 +2005,21 @@
                 }
             });
         });
+
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.querySelector('.drawer-overlay');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            // Prevent scrolling when menu is open
+            if (drawer.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
     </script>
 
     <!-- Swiper JS -->
