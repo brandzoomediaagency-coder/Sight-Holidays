@@ -1409,6 +1409,23 @@
         </div>
     </section>
 
+    <!-- Categories Section -->
+    <section class="cat-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore by Category</h2>
+                <p>Choose your travel style and find the perfect getaway</p>
+            </div>
+            <div class="cat-tabs">
+                <div class="cat-tab active" data-filter="all">All</div>
+                <div class="cat-tab" data-filter="domestic">Domestic</div>
+                <div class="cat-tab" data-filter="international">International</div>
+                <div class="cat-tab" data-filter="honeymoon">Honeymoon</div>
+                <div class="cat-tab" data-filter="weekend">Weekend</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Top Trending Destinations -->
     <section id="trending" class="container" style="padding: 60px 0;">
         <div class="section-title"
@@ -1424,10 +1441,10 @@
         <div class="swiper dest-swiper">
             <div class="swiper-wrapper">
                 <!-- Leh Ladakh -->
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-category="domestic honeymoon">
                     <div class="dest-card"
-                        onclick="openModal('Leh Ladakh', 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&q=80&w=400')">
-                        <img src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&q=80&w=400"
+                        onclick="openModal('Leh Ladakh', 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&q=80&w=800"
                             alt="Leh Ladakh">
                         <div class="dest-overlay">
                             <h3>Leh Ladakh</h3>
@@ -1436,10 +1453,10 @@
                     </div>
                 </div>
                 <!-- Kerala -->
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-category="domestic honeymoon">
                     <div class="dest-card"
-                        onclick="openModal('Kerala', 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&q=80&w=400')">
-                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&q=80&w=400"
+                        onclick="openModal('Kerala', 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&q=80&w=800"
                             alt="Kerala">
                         <div class="dest-overlay">
                             <h3>Kerala</h3>
@@ -1448,10 +1465,10 @@
                     </div>
                 </div>
                 <!-- Rajasthan -->
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-category="domestic honeymoon">
                     <div class="dest-card"
-                        onclick="openModal('Rajasthan', 'https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=400')">
-                        <img src="https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=400"
+                        onclick="openModal('Rajasthan', 'https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=800"
                             alt="Rajasthan">
                         <div class="dest-overlay">
                             <h3>Rajasthan</h3>
@@ -1460,10 +1477,10 @@
                     </div>
                 </div>
                 <!-- Jammu & Kashmir -->
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-category="domestic honeymoon">
                     <div class="dest-card"
-                        onclick="openModal('Jammu & Kashmir', 'https://images.unsplash.com/photo-1598305312384-d660c1d1000b?auto=format&fit=crop&q=80&w=400')">
-                        <img src="https://images.unsplash.com/photo-1598305312384-d660c1d1000b?auto=format&fit=crop&q=80&w=400"
+                        onclick="openModal('Jammu & Kashmir', 'https://images.unsplash.com/photo-1598305312384-d660c1d1000b?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1598305312384-d660c1d1000b?auto=format&fit=crop&q=80&w=800"
                             alt="Jammu & Kashmir">
                         <div class="dest-overlay">
                             <h3>Jammu & Kashmir</h3>
@@ -1472,10 +1489,10 @@
                     </div>
                 </div>
                 <!-- Spiti -->
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-category="domestic weekend">
                     <div class="dest-card"
-                        onclick="openModal('Spiti', 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&q=80&w=400')">
-                        <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&q=80&w=400"
+                        onclick="openModal('Spiti', 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&q=80&w=800"
                             alt="Spiti">
                         <div class="dest-overlay">
                             <h3>Spiti</h3>
@@ -1484,14 +1501,50 @@
                     </div>
                 </div>
                 <!-- Uttarakhand -->
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-category="domestic weekend">
                     <div class="dest-card"
-                        onclick="openModal('Uttarakhand Tour Packages', 'https://images.unsplash.com/photo-1588665555435-08e82d861619?auto=format&fit=crop&q=80&w=400')">
-                        <img src="https://images.unsplash.com/photo-1588665555435-08e82d861619?auto=format&fit=crop&q=80&w=400"
+                        onclick="openModal('Uttarakhand Tour Packages', 'https://images.unsplash.com/photo-1588665555435-08e82d861619?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1588665555435-08e82d861619?auto=format&fit=crop&q=80&w=800"
                             alt="Uttarakhand">
                         <div class="dest-overlay">
                             <h3>Uttarakhand Tour Packages</h3>
                             <p>28 + Packages</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dubai -->
+                <div class="swiper-slide" data-category="international">
+                    <div class="dest-card"
+                        onclick="openModal('Dubai Tour Packages', 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800"
+                            alt="Dubai">
+                        <div class="dest-overlay">
+                            <h3>Dubai Tour Packages</h3>
+                            <p>12 + Packages</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Thailand -->
+                <div class="swiper-slide" data-category="international honeymoon">
+                    <div class="dest-card"
+                        onclick="openModal('Thailand Packages', 'https://images.unsplash.com/photo-1528181304800-2f140819898c?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1528181304800-2f140819898c?auto=format&fit=crop&q=80&w=800"
+                            alt="Thailand">
+                        <div class="dest-overlay">
+                            <h3>Thailand Packages</h3>
+                            <p>15 + Packages</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Maldives -->
+                <div class="swiper-slide" data-category="international honeymoon">
+                    <div class="dest-card"
+                        onclick="openModal('Maldives Honeymoon', 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=800"
+                            alt="Maldives">
+                        <div class="dest-overlay">
+                            <h3>Maldives Honeymoon</h3>
+                            <p>8 + Packages</p>
                         </div>
                     </div>
                 </div>
@@ -1787,6 +1840,34 @@
                 delay: 4000,
                 disableOnInteraction: false,
             },
+        });
+
+        // Category Filtering Logic
+        const catTabs = document.querySelectorAll('.cat-tab');
+        const destSlides = document.querySelectorAll('.dest-swiper .swiper-slide');
+
+        catTabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                // Update active tab
+                catTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+
+                // Filter slides
+                destSlides.forEach(slide => {
+                    const category = slide.getAttribute('data-category') || "";
+                    if (filter === 'all' || category.includes(filter)) {
+                        slide.style.display = 'block';
+                    } else {
+                        slide.style.display = 'none';
+                    }
+                });
+
+                // Re-update Swiper
+                destSwiper.update();
+                destSwiper.slideTo(0);
+            });
         });
 
         // Modal Logic
