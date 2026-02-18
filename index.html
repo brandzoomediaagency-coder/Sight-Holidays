@@ -261,6 +261,34 @@
             color: var(--black);
             border-bottom: 1px solid #eee;
             padding-bottom: 10px;
+            transform: translateX(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .mobile-drawer.active .drawer-links a {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .mobile-drawer.active .drawer-links a:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .mobile-drawer.active .drawer-links a:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-drawer.active .drawer-links a:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-drawer.active .drawer-links a:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        .mobile-drawer.active .drawer-links a:nth-child(5) {
+            transition-delay: 0.5s;
         }
 
         .drawer-contact {
@@ -1125,6 +1153,10 @@
             .header-actions {
                 display: flex;
             }
+
+            nav .btn-yellow {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -1192,6 +1224,10 @@
             <a href="#international" onclick="toggleMenu()">International</a>
             <a href="#about" onclick="toggleMenu()">About Us</a>
             <a href="#contact" onclick="toggleMenu()">Contact</a>
+        </div>
+        <div style="margin-top: 20px;">
+            <a href="javascript:void(0)" onclick="openModal('Plan My Trip'); toggleMenu();" class="btn btn-yellow"
+                style="width: 100%; text-align: center;">Plan My Trip</a>
         </div>
         <div class="drawer-contact">
             <p><i class="fas fa-phone"></i> +91 9811994646</p>
