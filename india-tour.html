@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Tour Packages | Sight Holidays</title>
+    <meta name="description"
+        content="Explore the best of India with Sight Holidays. From the Himalayas in the North to the backwaters of Kerala in the South, discover our range of premium tour packages.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        :root {
+            --yellow: #FFC107;
+            --black: #1A1A1A;
+            --pure-black: #000000;
+            --dark-gray: #333333;
+            --light-gray: #F5F5F5;
+            --white: #ffffff;
+            --accent: #E94B6D;
+            --text-gray: #666666;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .btn-yellow {
+            background-color: var(--yellow);
+            color: var(--black);
+        }
+
+        .btn-yellow:hover {
+            background-color: var(--black);
+            color: var(--yellow);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-contact {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-contact a:hover {
+            color: var(--yellow);
+        }
+
+        .top-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-socials a:hover {
+            color: var(--yellow);
+        }
+
+        @media (max-width: 600px) {
+            .top-socials {
+                display: none;
+            }
+        }
+
+        /* Navbar */
+        nav {
+            background-color: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            color: var(--black);
+        }
+
+        .logo-text span {
+            color: var(--yellow);
+        }
+
+        .tagline {
+            font-size: 10px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: -5px;
+            color: var(--text-gray);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--black);
+            padding: 10px 5px;
+        }
+
+        .nav-links li:hover>a {
+            color: var(--yellow);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--black);
+        }
+
+        @media (max-width: 991px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Hero Section */
+        .tour-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('North East Himalayan Trip hedder.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .tour-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .tour-hero p {
+            font-size: 18px;
+            max-width: 800px;
+        }
+
+        /* Zone Section */
+        .zone-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--black);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background-color: var(--yellow);
+        }
+
+        .zone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .zone-card {
+            background: var(--light-gray);
+            border-radius: 15px;
+            padding: 30px;
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .zone-card:hover {
+            transform: translateY(-10px);
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            border-top-color: var(--yellow);
+        }
+
+        .zone-card i {
+            font-size: 40px;
+            color: var(--yellow);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .zone-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .zone-card ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .zone-card ul li {
+            font-size: 14px;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        /* Trending Section */
+        .trending-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .package-img {
+            height: 250px;
+            position: relative;
+        }
+
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .package-info {
+            padding: 25px;
+        }
+
+        .package-info h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .package-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        /* Mobile Drawer */
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: #fff;
+            z-index: 1001;
+            transition: 0.3s;
+            padding: 20px;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-drawer.active {
+            right: 0;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+        }
+
+        .drawer-overlay.active {
+            display: block;
+        }
+
+        .drawer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .drawer-links a {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: var(--yellow);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-contact">
+                <a href="tel:919811994646"><i class="fas fa-phone"></i> +91 9811994646</a>
+                <a href="mailto:sales@sightholidays.com"><i class="fas fa-envelope"></i> sales@sightholidays.com</a>
+            </div>
+            <div class="top-socials">
+                <a href="https://www.facebook.com/sightholidays" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sightholidays" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/sightholidays" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <div class="logo-area">
+                <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="logo.jpeg" alt="Sight Holidays" style="height: 60px;">
+                    <div>
+                        <span class="logo-text">SIGHT <span>HOLIDAYS</span></span>
+                        <span class="tagline">Mesmerizing Memorable Memories</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="india-tour.html" style="color: var(--yellow);">India Tour</a></li>
+                <li><a href="index.html#themes">Theme Holidays</a></li>
+                <li><a href="index.html#packages">Sight Special</a></li>
+                <li><a href="index.html#themes">Weekend Getaways</a></li>
+                <li><a href="index.html#contact">Services</a></li>
+            </ul>
+            <div class="header-actions">
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="drawer-overlay" onclick="toggleMenu()"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-close" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+        <div class="drawer-links">
+            <a href="index.html">Home</a>
+            <a href="india-tour.html" style="color: var(--yellow);">India Tour</a>
+            <a href="index.html#themes">Theme Holidays</a>
+            <a href="index.html#packages">Sight Special</a>
+            <a href="index.html#themes">Weekend Getaways</a>
+            <a href="index.html#contact">Services</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="tour-hero">
+        <div class="container">
+            <h1>India Tour Packages</h1>
+            <p>Discover the beauty, culture, and heritage of Bharat with our expertly curated domestic holiday packages.
+            </p>
+        </div>
+    </section>
+
+    <!-- Zones Section -->
+    <section class="zone-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore India by Zone</h2>
+                <p>Choose your destination from the diverse regions of India</p>
+            </div>
+            <div class="zone-grid">
+                <div class="zone-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>North India</h3>
+                    <ul>
+                        <li>Jammu & Kashmir</li>
+                        <li>Leh Ladakh</li>
+                        <li>Himachal Pradesh</li>
+                        <li>Rajasthan</li>
+                        <li>Uttarakhand</li>
+                        <li>Uttar Pradesh</li>
+                        <li>Delhi</li>
+                    </ul>
+                </div>
+                <div class="zone-card">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <h3>South India</h3>
+                    <ul>
+                        <li>Kerala</li>
+                        <li>Tamil Nadu</li>
+                        <li>Andhra Pradesh</li>
+                        <li>Karnataka</li>
+                        <li>Puducherry</li>
+                        <li>Lakshadweep</li>
+                    </ul>
+                </div>
+                <div class="zone-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>West India</h3>
+                    <ul>
+                        <li>Goa</li>
+                        <li>Maharashtra</li>
+                        <li>Gujarat</li>
+                        <li>Madhya Pradesh</li>
+                        <li>Daman & Diu</li>
+                    </ul>
+                </div>
+                <div class="zone-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>East India</h3>
+                    <ul>
+                        <li>Sikkim</li>
+                        <li>Assam</li>
+                        <li>Meghalaya</li>
+                        <li>Darjeeling</li>
+                        <li>Arunachal</li>
+                        <li>Odisha</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Packages -->
+    <section class="trending-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Top Trending Packages</h2>
+                <p>Our most loved and highly rated India tour itineraries</p>
+            </div>
+            <div class="package-grid">
+                <!-- Golden Triangle -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="Golden Triangle Tour Package Hadder.png" alt="Golden Triangle">
+                    </div>
+                    <div class="package-info">
+                        <h3>Golden Triangle Tour Package</h3>
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 5 Days / 4 Nights</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Delhi, Agra, Jaipur</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://wa.me/919811994646?text=I'm%20interested%20in%20Golden%20Triangle%20Tour%20Package"
+                                class="btn btn-yellow" style="text-align: center;">Get Price</a>
+                            <a href="goldentriangle.html" class="btn btn-yellow"
+                                style="background: var(--black); color: white; text-align: center;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jaipur -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="Jaipur Ajmer Pushkar Udaipur Tour hadder.png" alt="Jaipur">
+                    </div>
+                    <div class="package-info">
+                        <h3>Jaipur Ajmer Pushkar Tour</h3>
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 6 Days / 5 Nights</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Rajasthan</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://wa.me/919811994646?text=I'm%20interested%20in%20Jaipur%20Ajmer%20Pushkar%20Udaipur%20Tour"
+                                class="btn btn-yellow" style="text-align: center;">Get Price</a>
+                            <a href="jaipur-tour.html" class="btn btn-yellow"
+                                style="background: var(--black); color: white; text-align: center;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- North East -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="North East Himalayan Trip hedder.png" alt="North East">
+                    </div>
+                    <div class="package-info">
+                        <h3>North East Himalayan Trip</h3>
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 7 Days / 6 Nights</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Gangtok, Darjeeling</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://wa.me/919811994646?text=I'm%20interested%20in%20North%20East%20Himalayan%20Trip"
+                                class="btn btn-yellow" style="text-align: center;">Get Price</a>
+                            <a href="northeast.html" class="btn btn-yellow"
+                                style="background: var(--black); color: white; text-align: center;">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="logo.jpeg" alt="Logo" style="height: 50px; margin-bottom: 20px;">
+                    <p>Experience the world like never before with Sight Holidays. We provide the best travel
+                        experiences across India and beyond.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="india-tour.html">India Tour</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-location-dot"></i> F 110c 2nd Floor Street No 07 Dwarka More Delhi 110059
+                        </li>
+                        <li><i class="fas fa-phone"></i> +91 9811994646</li>
+                        <li><i class="fas fa-envelope"></i> sales@sightholidays.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Sight Holidays. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.querySelector('.drawer-overlay');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
