@@ -124,6 +124,12 @@
             color: var(--yellow);
         }
 
+        @media (max-width: 600px) {
+            .top-socials {
+                display: none;
+            }
+        }
+
         /* Navbar */
         nav {
             background-color: var(--white);
@@ -523,6 +529,18 @@
         .cat-tab.active {
             background: var(--yellow);
             border-color: var(--yellow);
+        }
+
+        @media (max-width: 768px) {
+            .cat-tabs {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .cat-tab {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
         }
 
         /* Testimonials */
@@ -950,8 +968,19 @@
                 font-size: 32px;
             }
 
-            .footer-grid {
+            .search-form {
                 grid-template-columns: 1fr;
+            }
+
+            .footer-grid-new {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .socials-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 20px;
             }
         }
     </style>
