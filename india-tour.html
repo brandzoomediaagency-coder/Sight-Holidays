@@ -447,6 +447,143 @@
             font-size: 14px;
             color: rgba(255, 255, 255, 0.6);
         }
+
+        /* Tabbed Zone Section */
+        .zone-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .zone-tab {
+            padding: 10px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-gray);
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .zone-tab.active,
+        .zone-tab:hover {
+            color: var(--black);
+            border-bottom-color: var(--yellow);
+        }
+
+        .zone-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .zone-content.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dest-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 280px;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dest-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .dest-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .dest-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            color: white;
+        }
+
+        .dest-overlay h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .dest-overlay p {
+            font-size: 12px;
+            opacity: 0.9;
+            color: var(--yellow);
+        }
+
+        /* Holiday Themes Styles */
+        .themes-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .theme-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--yellow);
+        }
+
+        .theme-card i {
+            font-size: 30px;
+            color: var(--yellow);
+            margin-bottom: 15px;
+        }
+
+        .theme-card h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--black);
+        }
+
+        .theme-card p {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
     </style>
 </head>
 
@@ -515,57 +652,258 @@
     <section class="zone-section">
         <div class="container">
             <div class="section-header">
-                <h2>Explore India by Zone</h2>
+                <h2>India Tour Packages by Zone</h2>
                 <p>Choose your destination from the diverse regions of India</p>
             </div>
-            <div class="zone-grid">
-                <div class="zone-card">
+
+            <!-- Tabs -->
+            <div class="zone-tabs">
+                <div class="zone-tab active" onclick="openZone(event, 'North')">North India</div>
+                <div class="zone-tab" onclick="openZone(event, 'South')">South India</div>
+                <div class="zone-tab" onclick="openZone(event, 'East')">East India</div>
+                <div class="zone-tab" onclick="openZone(event, 'West')">West India</div>
+                <div class="zone-tab" onclick="openZone(event, 'Central')">Central India</div>
+                <div class="zone-tab" onclick="openZone(event, 'UT')">Union Territories</div>
+            </div>
+
+            <!-- North India -->
+            <div id="North" class="zone-content active">
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?kashmir" alt="Kashmir">
+                    <div class="dest-overlay">
+                        <h3>Jammu & Kashmir</h3>
+                        <p>28+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?ladakh" alt="Leh Ladakh">
+                    <div class="dest-overlay">
+                        <h3>Leh Ladakh</h3>
+                        <p>54+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?himachal" alt="Himachal">
+                    <div class="dest-overlay">
+                        <h3>Himachal Pradesh</h3>
+                        <p>39+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?rajasthan" alt="Rajasthan">
+                    <div class="dest-overlay">
+                        <h3>Rajasthan</h3>
+                        <p>17+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?uttarakhand" alt="Uttarakhand">
+                    <div class="dest-overlay">
+                        <h3>Uttarakhand</h3>
+                        <p>28+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?agra" alt="Uttar Pradesh">
+                    <div class="dest-overlay">
+                        <h3>Uttar Pradesh</h3>
+                        <p>7+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?delhi,india" alt="Delhi">
+                    <div class="dest-overlay">
+                        <h3>Delhi</h3>
+                        <p>27+ Packages</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- South India -->
+            <div id="South" class="zone-content">
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?kerala" alt="Kerala">
+                    <div class="dest-overlay">
+                        <h3>Kerala</h3>
+                        <p>26+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?karnataka" alt="Karnataka">
+                    <div class="dest-overlay">
+                        <h3>Karnataka</h3>
+                        <p>9+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?tamilnadu" alt="Tamil Nadu">
+                    <div class="dest-overlay">
+                        <h3>Tamil Nadu</h3>
+                        <p>4+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?andhrapradesh" alt="Andhra Pradesh">
+                    <div class="dest-overlay">
+                        <h3>Andhra Pradesh</h3>
+                        <p>1+ Packages</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- East India -->
+            <div id="East" class="zone-content">
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?sikkim" alt="Sikkim">
+                    <div class="dest-overlay">
+                        <h3>Sikkim</h3>
+                        <p>25+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?westbengal" alt="West Bengal">
+                    <div class="dest-overlay">
+                        <h3>West Bengal</h3>
+                        <p>4+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?odisha" alt="Odisha">
+                    <div class="dest-overlay">
+                        <h3>Odisha</h3>
+                        <p>17+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?assam" alt="Assam">
+                    <div class="dest-overlay">
+                        <h3>Assam</h3>
+                        <p>1+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?meghalaya" alt="Meghalaya">
+                    <div class="dest-overlay">
+                        <h3>Meghalaya</h3>
+                        <p>2+ Packages</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- West India -->
+            <div id="West" class="zone-content">
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?goa,beach" alt="Goa">
+                    <div class="dest-overlay">
+                        <h3>Goa</h3>
+                        <p>6+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?gujarat" alt="Gujarat">
+                    <div class="dest-overlay">
+                        <h3>Gujarat</h3>
+                        <p>29+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?maharashtra" alt="Maharashtra">
+                    <div class="dest-overlay">
+                        <h3>Maharashtra</h3>
+                        <p>Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Central India -->
+            <div id="Central" class="zone-content">
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?madhyapradesh" alt="Madhya Pradesh">
+                    <div class="dest-overlay">
+                        <h3>Madhya Pradesh</h3>
+                        <p>6+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?chhattisgarh" alt="Chhattisgarh">
+                    <div class="dest-overlay">
+                        <h3>Chhattisgarh</h3>
+                        <p>1+ Packages</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Union Territories -->
+            <div id="UT" class="zone-content">
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?andaman" alt="Andaman">
+                    <div class="dest-overlay">
+                        <h3>Andaman</h3>
+                        <p>24+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?lakshadweep" alt="Lakshadweep">
+                    <div class="dest-overlay">
+                        <h3>Lakshadweep</h3>
+                        <p>2+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?ladakh" alt="Leh Ladakh">
+                    <div class="dest-overlay">
+                        <h3>Leh Ladakh</h3>
+                        <p>54+ Packages</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://source.unsplash.com/featured/?puducherry" alt="Puducherry">
+                    <div class="dest-overlay">
+                        <h3>Puducherry</h3>
+                        <p>1+ Packages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Holiday Themes Section -->
+    <section class="themes-section" id="themes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Browse by Theme</h2>
+                <p>Find your perfect holiday style from our curated collections</p>
+            </div>
+            <div class="themes-grid">
+                <div class="theme-card">
+                    <i class="fas fa-paw"></i>
+                    <h3>Wildlife</h3>
+                    <p>Explore Nature</p>
+                </div>
+                <div class="theme-card">
                     <i class="fas fa-mountain"></i>
-                    <h3>North India</h3>
-                    <ul>
-                        <li>Jammu & Kashmir</li>
-                        <li>Leh Ladakh</li>
-                        <li>Himachal Pradesh</li>
-                        <li>Rajasthan</li>
-                        <li>Uttarakhand</li>
-                        <li>Uttar Pradesh</li>
-                        <li>Delhi</li>
-                    </ul>
+                    <h3>Hill Station</h3>
+                    <p>Scenic Views</p>
                 </div>
-                <div class="zone-card">
+                <div class="theme-card">
+                    <i class="fas fa-gopuram"></i>
+                    <h3>Pilgrimage</h3>
+                    <p>Divine Journeys</p>
+                </div>
+                <div class="theme-card">
+                    <i class="fas fa-landmark"></i>
+                    <h3>Heritage</h3>
+                    <p>Rich History</p>
+                </div>
+                <div class="theme-card">
                     <i class="fas fa-umbrella-beach"></i>
-                    <h3>South India</h3>
-                    <ul>
-                        <li>Kerala</li>
-                        <li>Tamil Nadu</li>
-                        <li>Andhra Pradesh</li>
-                        <li>Karnataka</li>
-                        <li>Puducherry</li>
-                        <li>Lakshadweep</li>
-                    </ul>
+                    <h3>Beach Dates</h3>
+                    <p>Sun & Sand</p>
                 </div>
-                <div class="zone-card">
-                    <i class="fas fa-sun"></i>
-                    <h3>West India</h3>
-                    <ul>
-                        <li>Goa</li>
-                        <li>Maharashtra</li>
-                        <li>Gujarat</li>
-                        <li>Madhya Pradesh</li>
-                        <li>Daman & Diu</li>
-                    </ul>
-                </div>
-                <div class="zone-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>East India</h3>
-                    <ul>
-                        <li>Sikkim</li>
-                        <li>Assam</li>
-                        <li>Meghalaya</li>
-                        <li>Darjeeling</li>
-                        <li>Arunachal</li>
-                        <li>Odisha</li>
-                    </ul>
+                <div class="theme-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Honeymoon</h3>
+                    <p>Romantic Escapes</p>
                 </div>
             </div>
         </div>
@@ -681,6 +1019,28 @@
             const overlay = document.querySelector('.drawer-overlay');
             drawer.classList.toggle('active');
             overlay.classList.toggle('active');
+        }
+
+        function openZone(evt, zoneName) {
+            var i, zoneContent, zoneTabs;
+
+            // Hide all contents
+            zoneContent = document.getElementsByClassName("zone-content");
+            for (i = 0; i < zoneContent.length; i++) {
+                zoneContent[i].style.display = "none";
+                zoneContent[i].classList.remove("active");
+            }
+
+            // Remove active class from all tabs
+            zoneTabs = document.getElementsByClassName("zone-tab");
+            for (i = 0; i < zoneTabs.length; i++) {
+                zoneTabs[i].className = zoneTabs[i].className.replace(" active", "");
+            }
+
+            // Show current content and add active class to tab
+            document.getElementById(zoneName).style.display = "grid";
+            document.getElementById(zoneName).classList.add("active");
+            evt.currentTarget.className += " active";
         }
     </script>
 </body>
