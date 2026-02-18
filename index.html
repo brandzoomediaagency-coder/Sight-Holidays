@@ -431,6 +431,73 @@
             transform: scale(0.5);
         }
 
+        /* Destinations Section (Trending) */
+        .dest-swiper {
+            padding: 40px 0 60px;
+        }
+
+        .dest-card {
+            position: relative;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dest-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dest-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .dest-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 20px 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .dest-overlay h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .dest-overlay p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .dest-swiper .swiper-button-next,
+        .dest-swiper .swiper-button-prev {
+            color: #E94B6D !important;
+            /* Reference image style */
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dest-swiper .swiper-pagination-bullet-active {
+            background: #E94B6D !important;
+        }
+
+        /* Swiper CSS overrides */
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 18px !important;
+            font-weight: 700;
+        }
+
         /* Categories Section */
         .cat-section {
             background-color: var(--light-gray);
@@ -1189,50 +1256,98 @@
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="international" class="cat-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Best Selling Destinations</h2>
-                <p>Plan your next escape to these global favorites</p>
+    <!-- Top Trending Destinations -->
+    <section id="trending" class="container" style="padding: 60px 0;">
+        <div class="section-title"
+            style="display: flex; justify-content: space-between; align-items: flex-end; text-align: left; margin-bottom: 30px;">
+            <div>
+                <h2 style="color: #E94B6D; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-umbrella-beach"></i> Top Trending Travel Destinations
+                </h2>
+                <p>Packages for Best-Selling Destinations in India</p>
             </div>
-            <div class="cat-tabs">
-                <div class="cat-tab active">Domestic</div>
-                <div class="cat-tab">International</div>
-                <div class="cat-tab">Honeymoon</div>
-                <div class="cat-tab">Weekend</div>
+        </div>
+
+        <div class="swiper dest-swiper">
+            <div class="swiper-wrapper">
+                <!-- Leh Ladakh -->
+                <div class="swiper-slide">
+                    <div class="dest-card"
+                        onclick="openModal('Leh Ladakh', 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&q=80&w=400')">
+                        <img src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&q=80&w=400"
+                            alt="Leh Ladakh">
+                        <div class="dest-overlay">
+                            <h3>Leh Ladakh</h3>
+                            <p>21 + Packages</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kerala -->
+                <div class="swiper-slide">
+                    <div class="dest-card"
+                        onclick="openModal('Kerala', 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&q=80&w=400')">
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&q=80&w=400"
+                            alt="Kerala">
+                        <div class="dest-overlay">
+                            <h3>Kerala</h3>
+                            <p>27 + Packages</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Rajasthan -->
+                <div class="swiper-slide">
+                    <div class="dest-card"
+                        onclick="openModal('Rajasthan', 'https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=400')">
+                        <img src="https://images.unsplash.com/photo-1599661046289-e31897856741?auto=format&fit=crop&q=80&w=400"
+                            alt="Rajasthan">
+                        <div class="dest-overlay">
+                            <h3>Rajasthan</h3>
+                            <p>17 + Packages</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Jammu & Kashmir -->
+                <div class="swiper-slide">
+                    <div class="dest-card"
+                        onclick="openModal('Jammu & Kashmir', 'https://images.unsplash.com/photo-1598305312384-d660c1d1000b?auto=format&fit=crop&q=80&w=400')">
+                        <img src="https://images.unsplash.com/photo-1598305312384-d660c1d1000b?auto=format&fit=crop&q=80&w=400"
+                            alt="Jammu & Kashmir">
+                        <div class="dest-overlay">
+                            <h3>Jammu & Kashmir</h3>
+                            <p>30 + Packages</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Spiti -->
+                <div class="swiper-slide">
+                    <div class="dest-card"
+                        onclick="openModal('Spiti', 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&q=80&w=400')">
+                        <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&q=80&w=400"
+                            alt="Spiti">
+                        <div class="dest-overlay">
+                            <h3>Spiti</h3>
+                            <p>0 + Packages</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Uttarakhand -->
+                <div class="swiper-slide">
+                    <div class="dest-card"
+                        onclick="openModal('Uttarakhand Tour Packages', 'https://images.unsplash.com/photo-1588665555435-08e82d861619?auto=format&fit=crop&q=80&w=400')">
+                        <img src="https://images.unsplash.com/photo-1588665555435-08e82d861619?auto=format&fit=crop&q=80&w=400"
+                            alt="Uttarakhand">
+                        <div class="dest-overlay">
+                            <h3>Uttarakhand Tour Packages</h3>
+                            <p>28 + Packages</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="package-grid">
-                <!-- Destinations will be cards here -->
-                <div class="package-card" style="text-align: center; padding: 30px; cursor: pointer;"
-                    onclick="openModal('Agra Destination', 'https://images.unsplash.com/photo-1524492717547-2249978cc184?auto=format&fit=crop&q=80&w=400')">
-                    <img src="https://images.unsplash.com/photo-1524492717547-2249978cc184?auto=format&fit=crop&q=80&w=100"
-                        style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover; margin-bottom: 15px;">
-                    <h3>Agra</h3>
-                    <p style="color: var(--text-gray); font-size: 13px;">Experience the Taj</p>
-                </div>
-                <div class="package-card" style="text-align: center; padding: 30px; cursor: pointer;"
-                    onclick="openModal('Vietnam Destination', 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&q=80&w=400')">
-                    <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&q=80&w=100"
-                        style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover; margin-bottom: 15px;">
-                    <h3>Vietnam</h3>
-                    <p style="color: var(--text-gray); font-size: 13px;">Nature at its best</p>
-                </div>
-                <div class="package-card" style="text-align: center; padding: 30px; cursor: pointer;"
-                    onclick="openModal('Goa Destination', 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&q=80&w=400')">
-                    <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&q=80&w=100"
-                        style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover; margin-bottom: 15px;">
-                    <h3>Goa</h3>
-                    <p style="color: var(--text-gray); font-size: 13px;">Beaches & Fun</p>
-                </div>
-                <div class="package-card" style="text-align: center; padding: 30px; cursor: pointer;"
-                    onclick="openModal('Thailand Destination', 'https://images.unsplash.com/photo-1528181304800-2f140819898f?auto=format&fit=crop&q=80&w=400')">
-                    <img src="https://images.unsplash.com/photo-1528181304800-2f140819898f?auto=format&fit=crop&q=80&w=100"
-                        style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover; margin-bottom: 15px;">
-                    <h3>Thailand</h3>
-                    <p style="color: var(--text-gray); font-size: 13px;">Culture & Nightlife</p>
-                </div>
-            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
@@ -1392,6 +1507,36 @@
             },
             autoplay: {
                 delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Initialize Destinations Swiper
+        const destSwiper = new Swiper('.dest-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+            autoplay: {
+                delay: 4000,
                 disableOnInteraction: false,
             },
         });
