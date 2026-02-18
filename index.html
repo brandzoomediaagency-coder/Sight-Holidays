@@ -182,7 +182,7 @@
         /* Hero Section */
         #hero {
             height: 70vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=2000') center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hedderimage.webp') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -544,64 +544,217 @@
             border-radius: 10px;
         }
 
-        /* Footer */
+        /* Redesigned Footer Styles */
         footer {
-            background-color: var(--black);
+            background-color: #1a1a1a;
             color: var(--white);
-            padding: 80px 0 20px;
+            padding: 0;
+            position: relative;
         }
 
-        .footer-grid {
+        .footer-silhouette {
+            width: 100%;
+            height: 120px;
+            background: url('https://i.ibb.co/Lhb851p5/Sight-Holidays-Logo.jpg') repeat-x bottom;
+            /* Placeholder for silhoutte */
+            background-size: contain;
+            background-color: white;
+            margin-bottom: -5px;
+        }
+
+        .footer-content {
+            padding: 60px 0 40px;
+        }
+
+        .footer-grid-new {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-            gap: 50px;
-            margin-bottom: 50px;
+            grid-template-columns: 1.2fr 1fr 0.8fr 0.8fr;
+            gap: 40px;
         }
 
-        .footer-logo {
-            margin-bottom: 20px;
-        }
-
-        .footer h4 {
-            color: var(--yellow);
-            margin-bottom: 25px;
+        .footer-column h4 {
+            color: var(--white);
             font-size: 18px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #E94B6D;
+        }
+
+        /* Lead Form */
+        .footer-lead-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-lead-form input,
+        .footer-lead-form select,
+        .footer-lead-form textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background: #fff;
+            color: #333;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .footer-lead-form .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .btn-footer-submit {
+            background-color: #E94B6D;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
             text-transform: uppercase;
         }
 
-        .footer-links li {
+        .btn-footer-submit:hover {
+            background-color: #d63d5c;
+        }
+
+        /* Service List */
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #555;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .service-text h5 {
+            font-size: 14px;
+            margin: 0;
+            color: #fff;
+        }
+
+        .service-text p {
+            font-size: 12px;
+            color: #888;
+            margin: 0;
+        }
+
+        /* Links List */
+        .links-list {
+            list-style: none;
+        }
+
+        .links-list li {
             margin-bottom: 12px;
         }
 
-        .footer-links a {
+        .links-list a {
             color: #ccc;
             font-size: 14px;
+            transition: var(--transition);
         }
 
-        .footer-links a:hover {
-            color: var(--yellow);
+        .links-list a:hover {
+            color: #E94B6D;
             padding-left: 5px;
         }
 
-        .footer-contact li {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            color: #ccc;
-            font-size: 14px;
+        /* Socials bar */
+        .footer-socials-bar {
+            border-top: 1px solid #333;
+            padding: 20px 0;
+            margin-top: 40px;
         }
 
-        .footer-contact i {
-            color: var(--yellow);
-            font-size: 18px;
+        .socials-flex {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .social-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .sc-fb {
+            background: #3b5998;
+        }
+
+        .sc-ig {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .sc-tw {
+            background: #000;
+        }
+
+        .sc-yt {
+            background: #ff0000;
+        }
+
+        .social-content h6 {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .social-content p {
+            font-size: 11px;
+            color: #888;
+            margin: 0;
         }
 
         .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 20px;
+            padding: 20px 0;
             text-align: center;
             font-size: 13px;
-            color: #888;
+            color: #666;
+            border-top: 1px solid #222;
         }
 
         /* WhatsApp Button */
@@ -1379,54 +1532,149 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Redesigned Footer -->
     <footer id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-logo">
-                        <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
-                            <img src="logo.jpeg" alt="Sight Holidays" style="height: 40px;">
-                            <span class="logo-text" style="color: white;">SIGHT <span
-                                    style="color: var(--yellow);">HOLIDAYS</span></span>
-                        </a>
+        <!-- Decoration Silhouette -->
+        <div class="footer-silhouette"
+            style="background: url('https://img.freepik.com/free-vector/mountain-landscape-silhouette_23-2148281134.jpg') repeat-x bottom; background-size: cover;">
+        </div>
+
+        <div class="container footer-content">
+            <div class="footer-grid-new">
+                <!-- Column 1: Get Free Quotes -->
+                <div class="footer-column">
+                    <h4>Get Free Quotes</h4>
+                    <form id="footerLeadForm" class="footer-lead-form">
+                        <input type="text" placeholder="Full Name*" required>
+                        <input type="email" placeholder="Email Address*" required>
+                        <div
+                            style="display: flex; gap: 5px; background: white; border-radius: 5px; border: 1px solid #333; overflow: hidden;">
+                            <span style="padding: 10px; background: #eee; border-right: 1px solid #ddd;">🇮🇳 +91</span>
+                            <input type="tel" placeholder="Mobile Number*" style="border: none; flex: 1;">
+                        </div>
+                        <div class="row">
+                            <select>
+                                <option>No of adults</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3+</option>
+                            </select>
+                            <select>
+                                <option>No of childs</option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2+</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Comments" rows="3"></textarea>
+                        <button type="submit" class="btn-footer-submit">Submit</button>
+                    </form>
+                </div>
+
+                <!-- Column 2: Customer Service -->
+                <div class="footer-column">
+                    <h4>Customer service</h4>
+                    <div class="service-list">
+                        <div class="service-item">
+                            <div class="service-icon"><i class="fas fa-phone"></i></div>
+                            <div class="service-text">
+                                <h5>Call</h5>
+                                <p>+91-9811994646</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="service-text">
+                                <h5>WhatsApp</h5>
+                                <p>+91-9811994646</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon"><i class="fas fa-comment-dots"></i></div>
+                            <div class="service-text">
+                                <h5>Chat</h5>
+                                <p>Mon - Sat: 10:AM - 07:PM</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon"><i class="fas fa-question-circle"></i></div>
+                            <div class="service-text">
+                                <h5>FAQ's</h5>
+                                <p>FAQ's portal</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="service-text">
+                                <h5>Office</h5>
+                                <p>F 110c 2nd Floor Street No 07 Dwarka More Delhi 110059</p>
+                            </div>
+                        </div>
                     </div>
-                    <p style="color: #ccc; font-size: 14px;">Sight Holidays is your trusted travel partner dedicated to
-                        creating mesmerizing and memorable memories through curated holiday experiences.</p>
                 </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
+
+                <!-- Column 3: Our Company -->
+                <div class="footer-column">
+                    <h4>Our Company</h4>
+                    <ul class="links-list">
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Guest Service -->
+                <div class="footer-column">
+                    <h4>Guest Service</h4>
+                    <ul class="links-list">
                         <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Terms Condition</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Pay Now</a></li>
+                        <li><a href="#">Payumoney</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Domestic Tour</a></li>
-                        <li><a href="#">International Tour</a></li>
-                        <li><a href="#">Hotel Booking</a></li>
-                        <li><a href="#">Car Rental</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Contact Us</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 123, Luxury Wing, Delhi, India</li>
-                        <li><i class="fas fa-phone"></i> +91 9811994646</li>
-                        <li><i class="fas fa-envelope"></i> sales@sightholidays.com</li>
-                        <li><i class="fas fa-envelope"></i> booking@sightholidqys.com</li>
-                    </ul>
-                    <div class="top-socials" style="margin-top: 20px;">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/919811994646"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <!-- Socials Bar -->
+            <div class="footer-socials-bar">
+                <h4 style="margin-bottom: 20px;">Our socials</h4>
+                <div class="socials-flex">
+                    <div class="social-card">
+                        <div class="social-circle sc-fb"><i class="fab fa-facebook-f"></i></div>
+                        <div class="social-content">
+                            <h6>Facebook</h6>
+                            <p>sightholidays</p>
+                        </div>
+                    </div>
+                    <div class="social-card">
+                        <div class="social-circle sc-ig"><i class="fab fa-instagram"></i></div>
+                        <div class="social-content">
+                            <h6>Instagram</h6>
+                            <p>sightholidays</p>
+                        </div>
+                    </div>
+                    <div class="social-card">
+                        <div class="social-circle sc-tw"><i class="fab fa-x-twitter"></i></div>
+                        <div class="social-content">
+                            <h6>Twitter</h6>
+                            <p>@sightholidays</p>
+                        </div>
+                    </div>
+                    <div class="social-card">
+                        <div class="social-circle sc-yt"><i class="fab fa-youtube"></i></div>
+                        <div class="social-content">
+                            <h6>Youtube</h6>
+                            <p>@sightholidays1</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 &copy; 2026 Sight Holidays. All Rights Reserved. Designed for Mesmerizing Memorable Memories.
             </div>
@@ -1564,7 +1812,7 @@
             }
         }
 
-        // Form submission to WhatsApp
+        // Form submission to WhatsApp (Booking Modal)
         document.getElementById('bookingForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -1585,6 +1833,32 @@
 
             window.open(whatsappUrl, '_blank');
             closeModal();
+            this.reset();
+        });
+
+        // Footer Lead Form submission to WhatsApp
+        document.getElementById('footerLeadForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const phone = this.querySelector('input[type="tel"]').value;
+            const adults = this.querySelectorAll('select')[0].value;
+            const childs = this.querySelectorAll('select')[1].value;
+            const comments = this.querySelector('textarea').value;
+
+            const whatsappNumber = "919811994646";
+            const message = `*Footer Inquiry from Sight Holidays*%0A%0A` +
+                `*Name:* ${name}%0A` +
+                `*Email:* ${email}%0A` +
+                `*Phone:* +91 ${phone}%0A` +
+                `*Adults:* ${adults}%0A` +
+                `*Children:* ${childs}%0A` +
+                `*Comments:* ${comments}`;
+
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+            window.open(whatsappUrl, '_blank');
             this.reset();
         });
     </script>
