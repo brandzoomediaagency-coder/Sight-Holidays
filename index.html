@@ -49,8 +49,8 @@
           "logo": "https://sightholidays.com/logo.jpeg",
           "image": "https://sightholidays.com/logo.jpeg",
           "description": "Sight Holidays is a premier tour and travel agency in India offering customized domestic and international holiday packages, honeymoon trips, and family vacations.",
-          "telephone": "+91-9076573857",
-          "email": "sales@sightholidays.com",
+          "telephone": "+91-9811994646",
+          "email": "sightholidays@gmail.com",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "F 110c 2nd Floor Street No 07 Dwarka More",
@@ -147,6 +147,46 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Cancellation policies vary by package and booking time. Please refer to the specific terms and conditions provided at the time of booking."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What documents do I need for international travel?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For international tours, you generally need a passport with at least 6 months validity, a valid visa (depending on the destination), and travel insurance. We assist our clients with visa guidance and documentation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Sight Holidays provide group tour packages?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we specialize in organizing group tours, corporate retreats, and family reunions. Our group packages often come with special discounts and customized itineraries."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there any hidden costs in the tour packages?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We believe in transparent pricing. All inclusions and exclusions are clearly mentioned in the package itinerary. There are no hidden charges; however, personal expenses like shopping or extra meals are not covered."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the best time to visit Himachal Pradesh and Kashmir?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The best time to visit Himachal and Kashmir is from March to June for pleasant weather, and from December to February if you want to enjoy snow and winter sports."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer solo traveler friendly packages?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! We design safe and engaging solo traveler packages with verified accommodations and shared group activities to ensure a comfortable experience for single travelers."
               }
             }
           ]
@@ -977,6 +1017,81 @@
             border-radius: 10px;
         }
 
+        /* Review CTA Styles */
+        .review-cta-wrapper {
+            margin-top: 50px;
+            padding: 0 10px;
+        }
+
+        .review-cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .review-box {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .review-box:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--yellow);
+        }
+
+        .review-box i {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .review-box .fa-heart {
+            color: #E94B6D;
+        }
+
+        .review-box .fa-google {
+            color: #4285F4;
+        }
+
+        .review-box h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+
+        .review-box p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+            max-width: 300px;
+        }
+
+        .review-box .stars {
+            color: var(--yellow);
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .review-cta-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .review-box {
+                padding: 30px 20px;
+            }
+        }
+
         /* Redesigned Footer Styles */
         footer {
             background-color: #1a1a1a;
@@ -1538,8 +1653,8 @@
     <div class="top-bar">
         <div class="container">
             <div class="top-contact">
-                <a href="tel:9076573857"><i class="fas fa-phone"></i> +91 9076573857</a>
-                <a href="mailto:sales@sightholidays.com"><i class="fas fa-envelope"></i> sales@sightholidays.com</a>
+                <a href="tel:9811994646"><i class="fas fa-phone"></i> +91 9811994646</a>
+                <a href="mailto:sightholidays@gmail.com"><i class="fas fa-envelope"></i> sightholidays@gmail.com</a>
             </div>
             <div class="top-socials">
                 <a href="https://www.facebook.com/sightholidays" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -1592,8 +1707,8 @@
             <li><a href="index.html#packages">Sight Special</a></li>
         </ul>
         <div class="drawer-contact">
-            <p><i class="fas fa-phone"></i> +91 9076573857</p>
-            <p><i class="fas fa-envelope"></i> sales@sightholidays.com</p>
+            <p><i class="fas fa-phone"></i> +91 9811994646</p>
+            <p><i class="fas fa-envelope"></i> sightholidays@gmail.com</p>
             <div class="top-socials" style="display: flex; margin-top: 15px;">
                 <a href="https://www.facebook.com/sightholidays" target="_blank"
                     style="width: 40px; height: 40px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px; color: var(--black);"><i
@@ -2453,6 +2568,25 @@
                 <div style="margin-top: 20px; font-weight: 600;">- Amit Verma</div>
             </div>
         </div>
+
+        <div class="review-cta-wrapper">
+            <div class="review-cta-grid">
+                <div class="review-box">
+                    <i class="fas fa-heart"></i>
+                    <h3>Trusted by Travellers</h3>
+                    <p>Your journey is our passion. We value your feedback as it helps us create more mesmerizing
+                        memories for everyone.</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-box">
+                    <i class="fab fa-google"></i>
+                    <h3>Share Your Experience</h3>
+                    <p>Loved your trip? Support us by sharing your review on Google. It only takes a minute!</p>
+                    <a href="https://share.google/PX5BPevuKp4NUspi3" target="_blank" class="btn btn-yellow">Write a
+                        Review</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- FAQ Section -->
@@ -2501,6 +2635,46 @@
                     land arrangements (Hotel, Cab, Sightseeing). However, we can assist you with flight bookings upon
                     request.</p>
             </details>
+            <details
+                style="margin-bottom: 15px; border: 1px solid #eee; padding: 15px; border-radius: 10px; background: #fff;">
+                <summary style="font-weight: 600; cursor: pointer; outline: none;">What documents do I need for
+                    international travel?</summary>
+                <p style="margin-top: 10px; color: var(--text-gray); font-size: 14px;">For international tours, you
+                    generally need a passport with at least 6 months validity, a valid visa (depending on the
+                    destination), and travel insurance. We assist our clients with visa guidance and documentation.</p>
+            </details>
+            <details
+                style="margin-bottom: 15px; border: 1px solid #eee; padding: 15px; border-radius: 10px; background: #fff;">
+                <summary style="font-weight: 600; cursor: pointer; outline: none;">Does Sight Holidays provide group
+                    tour packages?</summary>
+                <p style="margin-top: 10px; color: var(--text-gray); font-size: 14px;">Yes, we specialize in organizing
+                    group tours, corporate retreats, and family reunions. Our group packages often come with special
+                    discounts and customized itineraries.</p>
+            </details>
+            <details
+                style="margin-bottom: 15px; border: 1px solid #eee; padding: 15px; border-radius: 10px; background: #fff;">
+                <summary style="font-weight: 600; cursor: pointer; outline: none;">Are there any hidden costs in the
+                    tour packages?</summary>
+                <p style="margin-top: 10px; color: var(--text-gray); font-size: 14px;">We believe in transparent
+                    pricing. All inclusions and exclusions are clearly mentioned in the package itinerary. There are no
+                    hidden charges; however, personal expenses like shopping or extra meals are not covered.</p>
+            </details>
+            <details
+                style="margin-bottom: 15px; border: 1px solid #eee; padding: 15px; border-radius: 10px; background: #fff;">
+                <summary style="font-weight: 600; cursor: pointer; outline: none;">What is the best time to visit
+                    Himachal Pradesh and Kashmir?</summary>
+                <p style="margin-top: 10px; color: var(--text-gray); font-size: 14px;">The best time to visit Himachal
+                    and Kashmir is from March to June for pleasant weather, and from December to February if you want to
+                    enjoy snow and winter sports.</p>
+            </details>
+            <details
+                style="margin-bottom: 15px; border: 1px solid #eee; padding: 15px; border-radius: 10px; background: #fff;">
+                <summary style="font-weight: 600; cursor: pointer; outline: none;">Do you offer solo traveler friendly
+                    packages?</summary>
+                <p style="margin-top: 10px; color: var(--text-gray); font-size: 14px;">Absolutely! We design safe and
+                    engaging solo traveler packages with verified accommodations and shared group activities to ensure a
+                    comfortable experience for single travelers.</p>
+            </details>
         </div>
     </section>
 
@@ -2548,31 +2722,38 @@
                     <h4>Customer service</h4>
                     <div class="service-list">
                         <div class="service-item">
-                            <div class="service-icon"><i class="fas fa-phone"></i></div>
-                            <div class="service-text">
-                                <h5>Call</h5>
-                                <p>+91-9076573857</p>
-                            </div>
-                        </div>
-                        <div class="service-item">
                             <div class="service-icon"><i class="fab fa-whatsapp"></i></div>
                             <div class="service-text">
-                                <h5>WhatsApp</h5>
-                                <p>+91-9076573857</p>
+                                <h5>WhatsApp/Sales</h5>
+                                <p>+91-9811994646</p>
                             </div>
                         </div>
                         <div class="service-item">
-                            <div class="service-icon"><i class="fas fa-comment-dots"></i></div>
+                            <div class="service-icon"><i class="fas fa-headset"></i></div>
                             <div class="service-text">
-                                <h5>Chat</h5>
-                                <p>Mon - Sat: 10:AM - 07:PM</p>
+                                <h5>Support</h5>
+                                <p>+91-9999173826</p>
                             </div>
                         </div>
                         <div class="service-item">
-                            <div class="service-icon"><i class="fas fa-question-circle"></i></div>
+                            <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
                             <div class="service-text">
-                                <h5>FAQ's</h5>
-                                <p>FAQ's portal</p>
+                                <h5>Grievance</h5>
+                                <p>+91-7061795905</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon"><i class="fas fa-exclamation-circle"></i></div>
+                            <div class="service-text">
+                                <h5>Complaint</h5>
+                                <p>+91-9999113826</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="service-text">
+                                <h5>Email</h5>
+                                <p>sightholidays@gmail.com</p>
                             </div>
                         </div>
                         <div class="service-item">
@@ -2696,16 +2877,16 @@
 
     <!-- Quick Action Bar -->
     <div class="quick-action-bar">
-        <a href="tel:919076573857" class="qa-btn qa-call">
+        <a href="tel:919811994646" class="qa-btn qa-call">
             <i class="fas fa-phone"></i> Call Now
         </a>
-        <a href="https://wa.me/919076573857" class="qa-btn qa-wa">
+        <a href="https://wa.me/919811994646" class="qa-btn qa-wa">
             <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
     </div>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/919076573857" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/919811994646" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -2870,7 +3051,7 @@
             const phone = document.getElementById('custPhone').value;
             const comments = document.getElementById('custComments').value;
 
-            const whatsappNumber = "919076573857";
+            const whatsappNumber = "919811994646";
             const message = `*Price Request from Sight Holidays*%0A%0A` +
                 `*Package:* ${currentPackage}%0A` +
                 `*Name:* ${name}%0A` +
@@ -2896,7 +3077,7 @@
             const childs = this.querySelectorAll('select')[1].value;
             const comments = this.querySelector('textarea').value;
 
-            const whatsappNumber = "919076573857";
+            const whatsappNumber = "919811994646";
             const message = `*Footer Inquiry from Sight Holidays*%0A%0A` +
                 `*Name:* ${name}%0A` +
                 `*Email:* ${email}%0A` +
